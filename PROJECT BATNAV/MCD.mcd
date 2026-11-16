@@ -1,0 +1,86 @@
+Pavillion:code_Pays[TEXT], nom_Pays[TEXT]
+Navire_Pays, 11 Navire, 1N Pavillion
+Navire:id_N  [SERIAL], nom[TEXT], type_Navire[TEXT], taille [INTEGER]
+Nav_To_Appart, 1N Navire, _11 Appartient_Flottille
+Appartient_Flottille:
+Appart_To_Flot, _11 Appartient_Flottille,1N Flottille
+Flottille:id_F[SERIAL], type_Flottille[TEXT], nb_navires [INTEGER]
+
+
+Orque:id_Q[SERIAL],Nom[TEXT],img[TEXT]
+Orque_Contient,1N Orque,_11 Peut_Contenir
+Peut_Contenir:_Coord_X[INTEGER],Coord_Y[CHAR]
+Grille_Contient,_11 Peut_Contenir, 1N Grille
+Navire_To_EST, _11 Est_Place, 1N Navire
+Est_Place:_coord_X[INTEGER], coord_Y[CHAR], sens[TEXT], etat[TEXT]
+
+Grille_To_EST, _11 Est_Place,1N Grille
+
+Grille_Navire, 11 Cellule_Grille,1N Navire
+Cellule_Grille:coord_X[INTEGER], _coord_Y[CHAR], etat,num_Case[TEXT]
+Cellule_To_Grille, _11 Cellule_Grille,1N Grille
+Grille:id_G[INTEGER],Type_Grille[INTEGER],Largeur[INTEGER],Hauteur[INTEGER],img_non_Exp[TEXT],img_Vide[TEXT],img_Touche[TEXT]
+grille_to_dispose,_11 Dispose_Grille,1N Grille
+
+Classement_CPP_To_Pavillion, _11 Classement_CPP,1N Pavillion
+Classement_CPP:_score_total[INTEGER], rang[INTEGER]
+Joueur_To_Class, _11 Classement_IJH, 1N Joueur
+Classement_IJH:_score_total[INTEGER], _rang[INTEGER]
+joueur_to_grill,_11 Dispose_Grille,1N Joueur
+Dispose_Grille:
+Partie_To_EST, _11 Est_Place,1N Partie
+Leurre_Grile, _11 Leurre, 1N Grille
+
+
+::
+Classement_To_CPP, _11 Classement_CPP, 1N Classement
+Dispose_to_Partie, 11 Dispose_Grille, 1N Partie
+Leurre:num_L[INTEGER], taille[INTEGER], coord_X[INTEGER], coord_Y[CHAR], sens[TEXT], etat[TEXT]
+::
+
+::
+Classemen_to_IJH, 1N Classement, 11 Classement_IJH
+Classement:id_C[INTEGER], delta_mois[INTEGER], type_classement[TEXT], date_calcul[TIMESTAMP]
+Joueur_Virtuelle:_Niveau [TEXT]
+Joue_Virt,0N Joueur_Virtuelle,11 Partie
+::
+
+Joueur:id_J [SERIAL],Pseudo [TEXT]
+/X\ Joueur -> Joueur_Virtuelle, Joueur_Humain
+Createur, 0N Joueur_Humain , 11 Joueur_Virtuelle:Date_Creation [DATE]
+Partie: id_P[INTEGER],Date_Creation[DATE],Heure_Creation[TEXT],Date_Fin[DATE],Heure_Fin [TEXT],Etat[TEXT],Score_Final [INTEGER]
+Se_Deroul_En,1N Partie,_11 Sequence_Temporelle
+Sequence_Temporelle:num_Seq [INTEGER] ,Date_Debut [DATE] ,Heure_Debut [TEXT], Date_Fin [DATE],Heure_Fin[TEXT]
+
+::
+Joueur_Humain:_Nom [TEXT] ,Prenom [TEXT] ,Date_Naiss [DATE],Date_Creation_Comte[DATE]
+Joue_Humain,0N Joueur_Humain,11 Partie
+Se_Decompose_En, 1N Partie, _11 Tour
+Dispose, 11 Partie,1N Pioche
+::
+
+::
+Tour:num_T[INTEGER], Nb_Navire_Coule_J [INTEGER],Nb_Cellule_Touche_J [INTEGER],Nb_Cellule_Exp_J [INTEGER], Nb_Navire_Coule_A [INTEGER],Nb_Cellule_Touche_A [INTEGER],Nb_Cellule_Exp_A [INTEGER],
+Pioche:id_Pi [INTEGER]
+A_Pour_Distribution, 11 Pioche,1N Distribution_Carte
+Distribution_Carte :id_D [SERIAL] , nom[TEXT], c_missile[INTEGER], c_rejoue[INTEGER], c_vide[INTEGER], c_mpm[INTEGER] , c_leurre[INTEGER], c_willy[INTEGER], c_mega[INTEGER], c_etoile[INTEGER], c_passe[INTEGER], c_oups[INTEGER]
+
+::
+
+:
+Effectue, 1N Tour, _11 Tir
+Appartient_Pioche, 1N Pioche, 11 Carte
+:
+
+Qui_Tir,1N Joueur, 11 Tir
+
+A_Gagner,0N Joueur,11 Partie
+Tir:num_Ti[INTEGER],Coord_X [INTEGER],Coord_Y[CHAR]
+Carte_Tire,1N Carte,11 Tir
+Carte:id_Carte [SERIAL],Rang [INTEGER]
+Est_Type, 1N Type_Carte, 11 Carte
+Type_Carte: Code_Carte [TEXT], Bonus [BOOL], Nom [TEXT],Description[TEXT],img[TEXT]
+
+
+Tir_Touche, 1N Tir,_11 Cellule_Devoile
+Cellule_Devoile:id_G[INTEGER],_Coord_X[INTEGER],_Coord_Y[CHAR]

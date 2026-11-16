@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block main_content %}
+<h2>Création de compte</h2>
+
+<form method="post">
+	<label for="nom">Nom</label>
+	<input type="text" name="nom" id="nom" required />
+	<br/><br/>
+	<label for="prenom">Prénom</label>
+	<input type="text" name="prenom" id="prenom" required />
+	<br/><br/>
+	<label for="date_naissance">Date de naissance</label>
+	<input
+		type="text"
+		name="date_naissance"
+		id="date_naissance"
+		placeholder="JJ/MM/AAAA"
+		pattern="^(0[1-9]|[12][0-9]|3[01])/(0[1-9]|1[0-2])/[0-9]{4}$"
+		required
+	/>
+	<br/><br/>
+	<label for="pseudo">Pseudo</label>
+	<input type="text" name="pseudo" id="pseudo" required />
+	<br/><br/>
+	<input type="submit" name="bouton_inscription" value="Créer le compte"/>
+</form>
+
+{% if SESSION.get('JOUEUR_COURANT') %}
+<p><a href="/accueil">Continuer vers l'accueil</a></p>
+{% endif %}
+{% endblock %}

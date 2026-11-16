@@ -1,0 +1,159 @@
+{% extends "base.html" %}
+
+{% block main_content %}
+<h2>Jeu</h2>
+
+{% if REQUEST_VARS.get('jeu') %}
+{% set jeu = REQUEST_VARS.jeu %}
+<p>Partie n°{{ jeu.partie.id_p }} contre <strong>{{ jeu.partie.pseudo_adversaire }}</strong> ({{ jeu.partie.niveau }})</p>
+<p>État : <strong>{{ jeu.partie.etat }}</strong></p>
+
+{% if jeu.tour_courant == 0 %}
+<form method="post">
+    <input type="submit" name="commencer_partie" value="Commencer la partie"/>
+</form>
+{% else %}
+<p>Tour courant : <strong>{{ jeu.tour_courant }}</strong></p>
+
+{% if jeu.carte_courante %}
+<div class="carte-zone">
+    <h3>Carte courante</h3>
+    <div class="carte-detail">
+        <img
+            src="/batnav/static/img/{{ jeu.carte_courante.img }}"
+            alt="{{ jeu.carte_courante.nom }}"
+            class="carte-image"
+        />
+        <div>
+            <p><strong>{{ jeu.carte_courante.nom }}</strong></p>
+            <p>{{ jeu.carte_courante.description }}</p>
+        </div>
+    </div>
+</div>
+{% endif %}
+
+{% if REQUEST_VARS.get('tour_resultat') %}
+{% set resultat = REQUEST_VARS.tour_resultat %}
+<div class="resume-tour">
+    <h3>Résumé du tour</h3>
+    <p>Votre tir : {{ resultat.player_shot.coord_y }}{{ resultat.player_shot.coord_x }} - {% if resultat.player_shot.hit %}touché{% else %}à l'eau{% endif %}</p>
+    {% if resultat.ai_shot %}
+    <p>Tir adverse : {{ resultat.ai_shot.coord_y }}{{ resultat.ai_shot.coord_x }} - {% if resultat.ai_shot.hit %}touché{% else %}à l'eau{% endif %}</p>
+    {% endif %}
+    {% if resultat.finished %}
+    <p><strong>La partie est terminée.</strong></p>
+    {% endif %}
+</div>
+{% endif %}
+
+{% if jeu.partie.etat == 'En cours' and jeu.nb_tirs_tour == 0 %}
+<form method="post" class="tir-form">
+    <label for="coord_y">Colonne</label>
+    <select name="coord_y" id="coord_y" required>
+        {% for letter in ['A','B','C','D','E','F','G','H','I','J'] %}
+        <option value="{{ letter }}">{{ letter }}</option>
+        {% endfor %}
+    </select>
+
+    <label for="coord_x">Ligne</label>
+    <select name="coord_x" id="coord_x" required>
+        {% for number in range(1, 11) %}
+        <option value="{{ number }}">{{ number }}</option>
+        {% endfor %}
+    </select>
+
+    <input type="submit" name="tirer" value="Tirer"/>
+</form>
+{% elif jeu.partie.etat == 'En cours' and jeu.nb_tirs_tour >= 2 %}
+<form method="post">
+    <input type="submit" name="suivant" value="Suivant"/>
+</form>
+{% endif %}
+
+<div class="grilles">
+    <section>
+        <h3>Vos navires</h3>
+        <table class="grille">
+            <thead>
+                <tr>
+                    <th></th>
+                    {% for letter in ['A','B','C','D','E','F','G','H','I','J'] %}
+                    <th>{{ letter }}</th>
+                    {% endfor %}
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in jeu.grille_navires %}
+                <tr>
+                    <th>{{ loop.index }}</th>
+                    {% for cell in row %}
+                    <td class="cell-{{ cell.state|lower }}">
+                        <img src="{{ cell.img }}" alt="{{ cell.state }}" class="cell-img" />
+                    </td>
+                    {% endfor %}
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </section>
+
+    <section>
+        <h3>Vos tirs</h3>
+        <table class="grille">
+            <thead>
+                <tr>
+                    <th></th>
+                    {% for letter in ['A','B','C','D','E','F','G','H','I','J'] %}
+                    <th>{{ letter }}</th>
+                    {% endfor %}
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in jeu.grille_tirs %}
+                <tr>
+                    <th>{{ loop.index }}</th>
+                    {% for cell in row %}
+                    <td class="cell-{{ cell.state|lower }}">
+                        <img src="{{ cell.img }}" alt="{{ cell.state }}" class="cell-img" />
+                    </td>
+                    {% endfor %}
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </section>
+</div>
+
+{% if jeu.journal_tour %}
+<h3>Journal du tour</h3>
+<table border="1" cellpadding="5">
+    <thead>
+        <tr>
+            <th>Tir</th>
+            <th>Carte</th>
+            <th>Coordonnée</th>
+            <th>Joueur</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for tir in jeu.journal_tour %}
+        <tr>
+            <td>{{ tir.num_ti }}</td>
+            <td class="journal-carte">
+                <img src="/batnav/static/img/{{ tir.img }}"
+                    alt="{{ tir.nom_carte }}"
+                    class="journal-carte-img"
+                />
+                <span>{{ tir.nom_carte }}</span>
+            </td>
+            <td>{% if tir.coord_x and tir.coord_y %}{{ tir.coord_y }}{{ tir.coord_x }}{% else %}-{% endif %}</td>
+            <td>{{ tir.id_j }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endif %}
+
+{% endif %}
+{% endif %}
+{% endblock %}

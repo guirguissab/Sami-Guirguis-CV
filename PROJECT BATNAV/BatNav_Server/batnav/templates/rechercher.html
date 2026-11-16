@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block extra_head %}
+{% if REQUEST_VARS.get('redirect_accueil') %}
+<meta http-equiv="refresh" content="0;url=/accueil" />
+{% endif %}
+{% endblock %}
+
+{% block main_content %}
+{% if REQUEST_VARS.get('page_id') == 'deconnexion' %}
+<h2>Déconnexion</h2>
+<p><a href="/rechercher">Retour à la connexion</a></p>
+
+{% elif REQUEST_VARS.get('redirect_accueil') %}
+<h2>Connexion</h2>
+<p>Connexion réussie. Redirection vers l'accueil…</p>
+
+{% else %}
+<h2>Connexion</h2>
+<p>Recherchez votre pseudo puis sélectionnez votre compte. :)</p>
+
+<form method="post">
+	<label for="id_pseudo_recherche">Pseudo</label>
+	<input type="text" name="pseudo_recherche" id="id_pseudo_recherche" placeholder="nico" required />
+	<input type="submit" name="bouton_rechercher" value="Chercher"/>
+</form>
+
+{% if REQUEST_VARS.result %}
+<p>{{ REQUEST_VARS.message_info }}</p>
+<form method="post">
+	<table id="tab_res_rech">
+		<thead>
+			<tr>
+				<th></th>
+				<th>Pseudo</th>
+				<th>Nom</th>
+				<th>Prénom</th>
+				<th>Date de naissance</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for instance in REQUEST_VARS.result %}
+			<tr>
+				<td><input type="radio" name="id_joueur_selectionne" value="{{ instance.id_j }}" required /></td>
+				<td>{{ instance.pseudo }}</td>
+				<td>{{ instance.nom }}</td>
+				<td>{{ instance.prenom }}</td>
+				<td>{{ instance.date_naiss }}</td>
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+	<br/>
+	<input type="submit" name="bouton_connexion" value="Se connecter avec ce pseudo"/>
+</form>
+{% endif %}
+
+{% endif %}
+{% endblock %}

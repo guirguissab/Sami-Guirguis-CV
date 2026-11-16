@@ -1,0 +1,105 @@
+{% extends "base.html" %}
+
+{% block main_content %}
+<h2>Accueil</h2>
+{% if REQUEST_VARS.joueur %}
+<p>Joueur connecté : <strong>{{ REQUEST_VARS.joueur.pseudo }}</strong></p>
+<p>Bienvenue {{ REQUEST_VARS.joueur.prenom }} {{ REQUEST_VARS.joueur.nom }}.</p>
+{% endif %}
+
+<h3>Règles </h3>
+<p>
+	La bataille navale oppose un joueur humain à un joueur virtuel. Le but est de couler tous les navires adverses.
+	Des cartes bonus/malus sont tirées à chaque tour pour modifier le déroulement de la partie.
+</p>
+
+<p><a href="/parties">Aller à la page des parties</a></p>
+
+<form method="post">
+	<input type="submit" name="chercher_partie" value="Chercher les parties"/>
+</form>
+
+{% if REQUEST_VARS.result %}
+<h3>Tous les parties</h3>
+<table border="1" cellpadding="5">
+    <thead>
+        <tr>
+            <th>ID Partie</th>
+            <th>Date création</th>
+            <th>État</th>
+            <th>Score final</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for partie in REQUEST_VARS.result %}
+        <tr>
+            <td>{{ partie.id_p }}</td>
+            <td>{{ partie.date_creation }}</td>
+            <td>{{ partie.etat }}</td>
+            <td>{{ partie.score_final|default("En cours") }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<p class="{{ REQUEST_VARS.message_class }}">{{ REQUEST_VARS.message_info }}</p>
+{% endif %}
+
+<form method="post">
+	<input type="submit" name="chercher_avg" value="moyenne de tour"/>
+</form>
+{% if REQUEST_VARS.average %}
+<h3>Moyenne de tour</h3>
+<p class="{{ REQUEST_VARS.message_class }}">{{ REQUEST_VARS.message_info }}</p>
+{% endif %}
+
+<form method="post">
+	<input type="submit" name="chercher_nb_carte" value="le nombre de tir des cartes"/>
+</form>
+
+{% if REQUEST_VARS.nb_carte %}
+<h3>Les reccurences des cartes</h3>
+<table border="1" cellpadding="5">
+    <thead>
+        <tr>
+            <th>nom de carte</th>
+            <th>nombre de tir</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for carte in REQUEST_VARS.nb_carte %}
+        <tr>
+            <td>{{ carte.nom }}</td>
+            <td>{{ carte.nb_de_tir }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<p class="{{ REQUEST_VARS.message_class }}">{{ REQUEST_VARS.message_info }}</p>
+{% endif %}
+
+<form method="post">
+	<input type="submit" name="chercher_partie_gagn" value="niveau gagner"/>
+</form>
+
+{% if REQUEST_VARS.chercher_gagn %}
+<h3>Le nb des partie gagner contre chaque niveau</h3>
+<table border="1" cellpadding="5">
+    <thead>
+        <tr>
+            <th>niveau</th>
+            <th>partie_gagner</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for partie in REQUEST_VARS.chercher_gagn %}
+        <tr>
+            <td>{{ partie.niveau }}</td>
+            <td>{{ partie.partie_gagner }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<p class="{{ REQUEST_VARS.message_class }}">{{ REQUEST_VARS.message_info }}</p>
+{% endif %}
+
+{% endblock %}

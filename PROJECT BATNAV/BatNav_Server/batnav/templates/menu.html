@@ -1,0 +1,21 @@
+{# Un seul menu : le contenu dépend de REQUEST_VARS.page_id (défini dans chaque contrôleur) #}
+{% set p = REQUEST_VARS.get('page_id', '') %}
+<nav>
+  <p><strong>Menu</strong></p>
+  {% if p in ['connexion', 'deconnexion'] %}
+    {% if SESSION.get('JOUEUR_COURANT') %}
+    <a href="/accueil">Accueil</a>
+    {% else %}
+    <a href="/inscription">Créer un compte</a>
+    {% endif %}
+  {% elif p == 'inscription' %}
+    <a href="/rechercher">Connexion</a>
+  {% else %}
+    <a href="/accueil">Accueil<br></a>
+    <a href="/parties">Parties<br></a>
+    <a href="/jeu">Jeu<br></a>
+    <a href="/rechercher">Changer compte<br></a>
+    <a href="/inscription">Nouveau compte<br></a>
+    <a href="/deconnexion">Déconnexion<br></a>
+  {% endif %}
+</nav>

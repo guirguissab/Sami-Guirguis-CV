@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <base href="/">
+  <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+  <link type="text/css" rel="stylesheet" href="/batnav/static/css/style.css">
+  <link rel="shortcut icon" type="image/x-icon"  />
+  <title>{{ SESSION['APP'] }} - {{ SESSION['BASELINE'] }}</title>
+  {% block extra_head %}{% endblock %}
+</head>
+<body>
+  <header>
+    <div style="float: left;">
+      {% if REQUEST_VARS.get('page_id') in ['connexion', 'inscription', 'deconnexion'] %}
+      <a href="/rechercher" title="Connexion"></a>
+      {% elif SESSION.get('JOUEUR_COURANT') %}
+      <a href="/accueil" title="Accueil"></a>
+      {% else %}
+      <a href="/rechercher" title="Connexion"></a>
+      {% endif %}
+    </div>
+    <h1>{{ SESSION['APP'] }}</h1>
+    <strong>{{ SESSION['BASELINE'] }}</strong>
+  </header>
+
+  <div id="div-central">
+    {% include 'menu.html' %}
+
+    <main>
+      {% if REQUEST_VARS.get('message') and REQUEST_VARS.get('message_class') %}
+      <div class="{{ REQUEST_VARS['message_class'] }}">{{ REQUEST_VARS['message'] }}</div>
+      {% endif %}
+      {% block main_content %}{% endblock %}
+    </main>
+  </div>
+</body>
+</html>

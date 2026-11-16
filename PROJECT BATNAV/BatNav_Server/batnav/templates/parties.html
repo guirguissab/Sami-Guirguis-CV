@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+
+{% block extra_head %}
+{% if REQUEST_VARS.get('redirect_jeu') %}
+<meta http-equiv="refresh" content="0;url=/jeu" />
+{% endif %}
+{% endblock %}
+
+{% block main_content %}
+<h2>Parties</h2>
+
+{% if REQUEST_VARS.get('redirect_jeu') %}
+<p>Ouverture de la partie…</p>
+{% else %}
+
+<p>Joueur courant : <strong>{{ REQUEST_VARS.joueur.pseudo }}</strong></p>
+
+<section>
+    <h3>Créer une nouvelle partie simple</h3>
+    <p>Version jalon 3 phase 1 : pioche simple et tirs simples.</p>
+    <form method="post">
+        <table border="1" cellpadding="5">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Pseudo</th>
+                    <th>Niveau</th>
+                    <th>Date création</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for adversaire in REQUEST_VARS.adversaires %}
+                <tr>
+                    <td><input type="radio" name="id_adversaire" value="{{ adversaire.id_j }}" required /></td>
+                    <td>{{ adversaire.pseudo }}</td>
+                    <td>{{ adversaire.niveau }}</td>
+                    <td>{{ adversaire.date_creation }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <br/>
+        <input type="submit" name="creer_partie" value="Créer une partie"/>
+    </form>
+</section>
+
+<section>
+    <h3>Parties en cours</h3>
+    {% if REQUEST_VARS.parties_en_cours %}
+    <form method="post">
+        <table border="1" cellpadding="5">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>ID</th>
+                    <th>Date</th>
+                    <th>Heure</th>
+                    <th>État</th>
+                    <th>Adversaire</th>
+                    <th>Niveau</th>
+                    <th>Tours</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for partie in REQUEST_VARS.parties_en_cours %}
+                <tr>
+                    <td><input type="radio" name="id_partie" value="{{ partie.id_p }}" required /></td>
+                    <td>{{ partie.id_p }}</td>
+                    <td>{{ partie.date_creation }}</td>
+                    <td>{{ partie.heure_creation }}</td>
+                    <td>{{ partie.etat }}</td>
+                    <td>{{ partie.pseudo_adversaire }}</td>
+                    <td>{{ partie.niveau }}</td>
+                    <td>{{ partie.nb_tours }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <br/>
+        <input type="submit" name="reprendre_partie" value="Reprendre la partie"/>
+    </form>
+    {% else %}
+    <p>Aucune partie simple en cours pour le moment.</p>
+    {% endif %}
+</section>
+
+{% endif %}
+{% endblock %}
