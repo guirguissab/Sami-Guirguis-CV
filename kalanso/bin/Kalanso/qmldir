@@ -1,0 +1,5 @@
+module Kalanso
+typeinfo version_QT.qmltypes
+prefer :/Kalanso/
+Main 1.0 qt/Main.qml
+

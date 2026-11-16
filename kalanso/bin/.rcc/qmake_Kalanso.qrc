@@ -1,0 +1,6 @@
+<RCC>
+  <qresource prefix="/Kalanso">
+    <file alias="qmldir">/home/sami-guirguis/kalanso/bin/Kalanso/qmldir</file>
+  </qresource>
+</RCC>
+

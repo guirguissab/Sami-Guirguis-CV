@@ -1,0 +1,217 @@
+\doxysection{Absence Class Reference}
+\hypertarget{classAbsence}{}\label{classAbsence}\index{Absence@{Absence}}
+
+
+Représente un enregistrement d\textquotesingle{}absence.  
+
+
+
+
+{\ttfamily \#include $<$Absence.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classAbsence_aa16e99e34379623c78002d96fcd8bb36}\label{classAbsence_aa16e99e34379623c78002d96fcd8bb36} 
+{\bfseries Absence} ()
+\begin{DoxyCompactList}\small\item\em Constructeur par défaut. \end{DoxyCompactList}\item 
+\Hypertarget{classAbsence_a43e8b26211cc9b21b04a10e218993947}\label{classAbsence_a43e8b26211cc9b21b04a10e218993947} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Absence} ()
+\begin{DoxyCompactList}\small\item\em Destructeur. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classDate}{Date}} \& \mbox{\hyperlink{classAbsence_a510e672ec99d3b7d3b29aa2c2083b6b0}{get\+Date}} ()
+\begin{DoxyCompactList}\small\item\em Retourne la date de l\textquotesingle{}absence. \end{DoxyCompactList}\item 
+const std\+::string \& \mbox{\hyperlink{classAbsence_ad7a7e54941584a2bd9fd2e66eab37c93}{get\+Motif}} ()
+\begin{DoxyCompactList}\small\item\em Retourne le motif de l\textquotesingle{}absence. \end{DoxyCompactList}\item 
+const bool \& \mbox{\hyperlink{classAbsence_a642c1fa0244c9a2248ffcad52283045b}{get\+Justif}} ()
+\begin{DoxyCompactList}\small\item\em Retourne le statut de justification. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classHeure}{Heure}} \& \mbox{\hyperlink{classAbsence_ae5d51e8be8d0818a6c2cf4cf896447d7}{get\+Heure}} ()
+\begin{DoxyCompactList}\small\item\em Retourne l\textquotesingle{}heure de l\textquotesingle{}absence. \end{DoxyCompactList}\item 
+const unsigned int \& \mbox{\hyperlink{classAbsence_a496d1ce082b34683e561aee4394e8eac}{get\+Id}} ()
+\begin{DoxyCompactList}\small\item\em Retourne l\textquotesingle{}identifiant unique de l\textquotesingle{}absence. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classAbsence_a8fda68e407b222047353489280d41951}{set\+Absc}} (const unsigned int n\+Ida, const \mbox{\hyperlink{classDate}{Date}} d, const \mbox{\hyperlink{classHeure}{Heure}} he, const std\+::string mot, const bool j)
+\begin{DoxyCompactList}\small\item\em Définit tous les attributs de l\textquotesingle{}absence en une seule fois. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classAbsence_a40e23cd50038cf66da6c3d0139c959a7}{set\+Heure}} (const \mbox{\hyperlink{classHeure}{Heure}} he)
+\begin{DoxyCompactList}\small\item\em Définit l\textquotesingle{}heure de l\textquotesingle{}absence. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classAbsence_a5b78af5e61dd84881123011d90425789}{set\+Motif}} (const std\+::string mot)
+\begin{DoxyCompactList}\small\item\em Définit le motif de l\textquotesingle{}absence. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classAbsence_abe7c94dc2110b7b1c04a9f7a73c8aea8}{set\+Date}} (const \mbox{\hyperlink{classDate}{Date}} d)
+\begin{DoxyCompactList}\small\item\em Définit la date de l\textquotesingle{}absence. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classAbsence_ac4d91eaf09dbc9e644dd0e34453b1eae}{set\+Justif}} (const bool j)
+\begin{DoxyCompactList}\small\item\em Définit le statut de justification. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classAbsence_aed224597a80921388a385b6e0bb06a8d}{set\+Id}} (const unsigned int n\+Ida)
+\begin{DoxyCompactList}\small\item\em Définit l\textquotesingle{}identifiant unique de l\textquotesingle{}absence. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Représente un enregistrement d\textquotesingle{}absence. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classAbsence_a510e672ec99d3b7d3b29aa2c2083b6b0}\label{classAbsence_a510e672ec99d3b7d3b29aa2c2083b6b0} 
+\index{Absence@{Absence}!getDate@{getDate}}
+\index{getDate@{getDate}!Absence@{Absence}}
+\doxysubsubsection{\texorpdfstring{getDate()}{getDate()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classDate}{Date}} \& Absence\+::get\+Date (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retourne la date de l\textquotesingle{}absence. 
+
+\begin{DoxyReturn}{Returns}
+Référence vers l\textquotesingle{}objet \doxylink{classDate}{Date}. 
+\end{DoxyReturn}
+\Hypertarget{classAbsence_ae5d51e8be8d0818a6c2cf4cf896447d7}\label{classAbsence_ae5d51e8be8d0818a6c2cf4cf896447d7} 
+\index{Absence@{Absence}!getHeure@{getHeure}}
+\index{getHeure@{getHeure}!Absence@{Absence}}
+\doxysubsubsection{\texorpdfstring{getHeure()}{getHeure()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classHeure}{Heure}} \& Absence\+::get\+Heure (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retourne l\textquotesingle{}heure de l\textquotesingle{}absence. 
+
+\begin{DoxyReturn}{Returns}
+Référence vers l\textquotesingle{}objet \doxylink{classHeure}{Heure}. 
+\end{DoxyReturn}
+\Hypertarget{classAbsence_a496d1ce082b34683e561aee4394e8eac}\label{classAbsence_a496d1ce082b34683e561aee4394e8eac} 
+\index{Absence@{Absence}!getId@{getId}}
+\index{getId@{getId}!Absence@{Absence}}
+\doxysubsubsection{\texorpdfstring{getId()}{getId()}}
+{\footnotesize\ttfamily const unsigned int \& Absence\+::get\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retourne l\textquotesingle{}identifiant unique de l\textquotesingle{}absence. 
+
+\begin{DoxyReturn}{Returns}
+Référence vers l\textquotesingle{}identifiant. 
+\end{DoxyReturn}
+\Hypertarget{classAbsence_a642c1fa0244c9a2248ffcad52283045b}\label{classAbsence_a642c1fa0244c9a2248ffcad52283045b} 
+\index{Absence@{Absence}!getJustif@{getJustif}}
+\index{getJustif@{getJustif}!Absence@{Absence}}
+\doxysubsubsection{\texorpdfstring{getJustif()}{getJustif()}}
+{\footnotesize\ttfamily const bool \& Absence\+::get\+Justif (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retourne le statut de justification. 
+
+\begin{DoxyReturn}{Returns}
+Référence vers le booléen de justification. 
+\end{DoxyReturn}
+\Hypertarget{classAbsence_ad7a7e54941584a2bd9fd2e66eab37c93}\label{classAbsence_ad7a7e54941584a2bd9fd2e66eab37c93} 
+\index{Absence@{Absence}!getMotif@{getMotif}}
+\index{getMotif@{getMotif}!Absence@{Absence}}
+\doxysubsubsection{\texorpdfstring{getMotif()}{getMotif()}}
+{\footnotesize\ttfamily const string \& Absence\+::get\+Motif (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retourne le motif de l\textquotesingle{}absence. 
+
+\begin{DoxyReturn}{Returns}
+Référence vers la chaîne motif. 
+\end{DoxyReturn}
+\Hypertarget{classAbsence_a8fda68e407b222047353489280d41951}\label{classAbsence_a8fda68e407b222047353489280d41951} 
+\index{Absence@{Absence}!setAbsc@{setAbsc}}
+\index{setAbsc@{setAbsc}!Absence@{Absence}}
+\doxysubsubsection{\texorpdfstring{setAbsc()}{setAbsc()}}
+{\footnotesize\ttfamily void Absence\+::set\+Absc (\begin{DoxyParamCaption}\item[{const unsigned int}]{n\+Ida,  }\item[{const \mbox{\hyperlink{classDate}{Date}}}]{d,  }\item[{const \mbox{\hyperlink{classHeure}{Heure}}}]{he,  }\item[{const std\+::string}]{mot,  }\item[{const bool}]{j }\end{DoxyParamCaption})}
+
+
+
+Définit tous les attributs de l\textquotesingle{}absence en une seule fois. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n\+Ida} & Identifiant unique de l\textquotesingle{}absence. \\
+\hline
+{\em d} & \doxylink{classDate}{Date} de l\textquotesingle{}absence. \\
+\hline
+{\em he} & \doxylink{classHeure}{Heure} de l\textquotesingle{}absence. \\
+\hline
+{\em mot} & Motif de l\textquotesingle{}absence. \\
+\hline
+{\em j} & Indique si l\textquotesingle{}absence est justifiée. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classAbsence_abe7c94dc2110b7b1c04a9f7a73c8aea8}\label{classAbsence_abe7c94dc2110b7b1c04a9f7a73c8aea8} 
+\index{Absence@{Absence}!setDate@{setDate}}
+\index{setDate@{setDate}!Absence@{Absence}}
+\doxysubsubsection{\texorpdfstring{setDate()}{setDate()}}
+{\footnotesize\ttfamily void Absence\+::set\+Date (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classDate}{Date}}}]{d }\end{DoxyParamCaption})}
+
+
+
+Définit la date de l\textquotesingle{}absence. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em d} & Nouvelle date. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classAbsence_a40e23cd50038cf66da6c3d0139c959a7}\label{classAbsence_a40e23cd50038cf66da6c3d0139c959a7} 
+\index{Absence@{Absence}!setHeure@{setHeure}}
+\index{setHeure@{setHeure}!Absence@{Absence}}
+\doxysubsubsection{\texorpdfstring{setHeure()}{setHeure()}}
+{\footnotesize\ttfamily void Absence\+::set\+Heure (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classHeure}{Heure}}}]{he }\end{DoxyParamCaption})}
+
+
+
+Définit l\textquotesingle{}heure de l\textquotesingle{}absence. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em he} & Nouvelle valeur de l\textquotesingle{}heure. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classAbsence_aed224597a80921388a385b6e0bb06a8d}\label{classAbsence_aed224597a80921388a385b6e0bb06a8d} 
+\index{Absence@{Absence}!setId@{setId}}
+\index{setId@{setId}!Absence@{Absence}}
+\doxysubsubsection{\texorpdfstring{setId()}{setId()}}
+{\footnotesize\ttfamily void Absence\+::set\+Id (\begin{DoxyParamCaption}\item[{const unsigned int}]{n\+Ida }\end{DoxyParamCaption})}
+
+
+
+Définit l\textquotesingle{}identifiant unique de l\textquotesingle{}absence. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n\+Ida} & Nouvel identifiant. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classAbsence_ac4d91eaf09dbc9e644dd0e34453b1eae}\label{classAbsence_ac4d91eaf09dbc9e644dd0e34453b1eae} 
+\index{Absence@{Absence}!setJustif@{setJustif}}
+\index{setJustif@{setJustif}!Absence@{Absence}}
+\doxysubsubsection{\texorpdfstring{setJustif()}{setJustif()}}
+{\footnotesize\ttfamily void Absence\+::set\+Justif (\begin{DoxyParamCaption}\item[{const bool}]{j }\end{DoxyParamCaption})}
+
+
+
+Définit le statut de justification. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em j} & Nouvelle valeur de justification. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classAbsence_a5b78af5e61dd84881123011d90425789}\label{classAbsence_a5b78af5e61dd84881123011d90425789} 
+\index{Absence@{Absence}!setMotif@{setMotif}}
+\index{setMotif@{setMotif}!Absence@{Absence}}
+\doxysubsubsection{\texorpdfstring{setMotif()}{setMotif()}}
+{\footnotesize\ttfamily void Absence\+::set\+Motif (\begin{DoxyParamCaption}\item[{const std\+::string}]{mot }\end{DoxyParamCaption})}
+
+
+
+Définit le motif de l\textquotesingle{}absence. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mot} & Nouveau motif. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/Absence.\+h\item 
+src/Absence.\+cpp\end{DoxyCompactItemize}

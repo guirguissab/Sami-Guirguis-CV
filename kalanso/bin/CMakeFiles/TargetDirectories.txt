@@ -1,0 +1,17 @@
+/home/sami-guirguis/kalanso/bin/CMakeFiles/testRegression.dir
+/home/sami-guirguis/kalanso/bin/CMakeFiles/version_TXT.dir
+/home/sami-guirguis/kalanso/bin/CMakeFiles/version_QT.dir
+/home/sami-guirguis/kalanso/bin/CMakeFiles/version_QT_automoc_json_extraction.dir
+/home/sami-guirguis/kalanso/bin/CMakeFiles/version_QT_qmltyperegistration.dir
+/home/sami-guirguis/kalanso/bin/CMakeFiles/all_qmltyperegistrations.dir
+/home/sami-guirguis/kalanso/bin/CMakeFiles/version_QT_other_files.dir
+/home/sami-guirguis/kalanso/bin/CMakeFiles/version_QT_qmllint.dir
+/home/sami-guirguis/kalanso/bin/CMakeFiles/version_QT_qmllint_json.dir
+/home/sami-guirguis/kalanso/bin/CMakeFiles/all_qmllint.dir
+/home/sami-guirguis/kalanso/bin/CMakeFiles/all_qmllint_json.dir
+/home/sami-guirguis/kalanso/bin/CMakeFiles/version_QT_tooling.dir
+/home/sami-guirguis/kalanso/bin/CMakeFiles/version_QT_qmlimportscan.dir
+/home/sami-guirguis/kalanso/bin/CMakeFiles/edit_cache.dir
+/home/sami-guirguis/kalanso/bin/CMakeFiles/rebuild_cache.dir
+/home/sami-guirguis/kalanso/bin/CMakeFiles/version_QT_autogen_timestamp_deps.dir
+/home/sami-guirguis/kalanso/bin/CMakeFiles/version_QT_autogen.dir

@@ -1,0 +1,35 @@
+\doxysection{Matiere.\+h}
+\hypertarget{Matiere_8h_source}{}\label{Matiere_8h_source}\index{src/Matiere.h@{src/Matiere.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//string\ nom,\ apogee,\ int\ coef}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//constructeur,\ destructeur,\ string\ getnom(),\ getapogee(),\ }}
+\DoxyCodeLine{00003\ \textcolor{comment}{//void\ set\ nometapogee(string\ nom,\ apogee),\ void\ set\ coef(int\ coef)}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#ifndef\ MATIERE\_H}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#define\ MATIERE\_H}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classMatiere}{Matiere}}\ \{}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ idM;}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ std::string\ nom;}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ std::string\ apogee;}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ coef;}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classMatiere}{Matiere}}();}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classMatiere}{Matiere}}(\textcolor{keyword}{const}\ std::string\&\ n,\ \textcolor{keyword}{const}\ std::string\&\ a,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ c\ ,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ Id\ );}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classMatiere}{\string~Matiere}}();}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ getId();}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ std::string\ getnom()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ std::string\ getapogee()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ setnometapogee(\textcolor{keyword}{const}\ std::string\&\ n,\ \textcolor{keyword}{const}\ std::string\&\ a);}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ setcoef(\textcolor{keywordtype}{int}\ c);}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \};}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

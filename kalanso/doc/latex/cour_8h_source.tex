@@ -1,0 +1,31 @@
+\doxysection{cour.\+h}
+\hypertarget{cour_8h_source}{}\label{cour_8h_source}\index{src/cour.h@{src/cour.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ COUR\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ COUR\_H}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}Heure.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}Matiere.h"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classcour}{cour}}\{}
+\DoxyCodeLine{00008\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00009\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ idC;}
+\DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ std::string\ jour;}
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ std::string\ salle;}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classHeure}{Heure}}\ debut;}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classHeure}{Heure}}\ fin;}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classMatiere}{Matiere}}\ mat;}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classcour}{cour}}();}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classcour}{cour}}(\textcolor{keyword}{const}\ std::string\&\ j,\ \textcolor{keyword}{const}\ std::string\&\ s,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classHeure}{Heure}}\&\ d,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classHeure}{Heure}}\&\ f,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classMatiere}{Matiere}}\&\ m,\textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ Id);}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classcour}{\string~cour}}();}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ std::string\ getJour()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ std::string\ getSalle()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ getId();}
+\DoxyCodeLine{00023\ \};}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,56 @@
+\doxysection{Professeur Class Reference}
+\hypertarget{classProfesseur}{}\label{classProfesseur}\index{Professeur@{Professeur}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classProfesseur_a1eaff276ff91f41d2094cb0ab3f2b3a1}\label{classProfesseur_a1eaff276ff91f41d2094cb0ab3f2b3a1} 
+{\bfseries Professeur} (const \mbox{\hyperlink{classPersonne}{Personne}} pe)
+\item 
+\Hypertarget{classProfesseur_a890aeee0c8f7a72b67addd89c743d402}\label{classProfesseur_a890aeee0c8f7a72b67addd89c743d402} 
+const \mbox{\hyperlink{classPersonne}{Personne}} \& {\bfseries get\+Profil} () const
+\item 
+\Hypertarget{classProfesseur_aa8ac8e7470cdbe6a000150d654f40fcb}\label{classProfesseur_aa8ac8e7470cdbe6a000150d654f40fcb} 
+const std\+::vector$<$ \mbox{\hyperlink{classMatiere}{Matiere}} $>$ \& {\bfseries get\+Matieres\+Enseignees} () const
+\item 
+\Hypertarget{classProfesseur_a3ece599713b45087ce8e35c7c04a1360}\label{classProfesseur_a3ece599713b45087ce8e35c7c04a1360} 
+const std\+::vector$<$ \mbox{\hyperlink{classClassEtu}{Class\+Etu}} $>$ \& {\bfseries get\+Classes\+Enseignees} () const
+\item 
+\Hypertarget{classProfesseur_aee153f6507b78e83abbb4c80367684ec}\label{classProfesseur_aee153f6507b78e83abbb4c80367684ec} 
+const \mbox{\hyperlink{classEDT}{EDT}} \& {\bfseries consulter\+EDT} () const
+\item 
+\Hypertarget{classProfesseur_a13038908c7d8f0315bfe407a57d4d9e1}\label{classProfesseur_a13038908c7d8f0315bfe407a57d4d9e1} 
+void {\bfseries add\+Matiere} (const \mbox{\hyperlink{classMatiere}{Matiere}} \&mat)
+\item 
+\Hypertarget{classProfesseur_a92a3b42d7ef663362ba264c182074376}\label{classProfesseur_a92a3b42d7ef663362ba264c182074376} 
+void {\bfseries set\+EDT} (const \mbox{\hyperlink{classEDT}{EDT}} \&n\+EDT)
+\item 
+\Hypertarget{classProfesseur_af5a1dfe9e720ff454c044257c84b2474}\label{classProfesseur_af5a1dfe9e720ff454c044257c84b2474} 
+void {\bfseries add\+Class} (const \mbox{\hyperlink{classClassEtu}{Class\+Etu}} \&cla)
+\item 
+\Hypertarget{classProfesseur_ad6906b3aef4662aaf72201ace89bb4ee}\label{classProfesseur_ad6906b3aef4662aaf72201ace89bb4ee} 
+bool {\bfseries add\+Note\+Etu} (const unsigned int \&id\+CE, const unsigned int \&idE, const \mbox{\hyperlink{classNote}{Note}} \&note)
+\item 
+\Hypertarget{classProfesseur_ad573a0b86bc0ed29ece34a235999d6ad}\label{classProfesseur_ad573a0b86bc0ed29ece34a235999d6ad} 
+bool {\bfseries modifier\+Note} (const unsigned int \&id\+CE, const unsigned int \&idE, const \mbox{\hyperlink{classNote}{Note}} \&note)
+\item 
+\Hypertarget{classProfesseur_aa23b99cc123358f63ac411cb7ba6e002}\label{classProfesseur_aa23b99cc123358f63ac411cb7ba6e002} 
+bool {\bfseries add\+Absence\+Etu} (const unsigned int \&id\+CE, const unsigned int \&idE, const \mbox{\hyperlink{classAbsence}{Absence}} \&ab)
+\item 
+\Hypertarget{classProfesseur_a67709407bd5f8d797d9970669a3bc59b}\label{classProfesseur_a67709407bd5f8d797d9970669a3bc59b} 
+void {\bfseries charger\+Depuis\+Database} (\mbox{\hyperlink{classDatabase}{Database}} \&db)
+\item 
+\Hypertarget{classProfesseur_ac321cd80ffcffd375652b7f51c1547f8}\label{classProfesseur_ac321cd80ffcffd375652b7f51c1547f8} 
+void {\bfseries saisir\+Note} (\mbox{\hyperlink{classDatabase}{Database}} \&db, unsigned int etudiant\+Id, unsigned int matiere\+Id, float valeur, float coef, const std\+::string \&appreciation) const
+\item 
+\Hypertarget{classProfesseur_a952b266fa99e799b8e2109556bd19000}\label{classProfesseur_a952b266fa99e799b8e2109556bd19000} 
+void {\bfseries modifier\+Note} (\mbox{\hyperlink{classDatabase}{Database}} \&db, unsigned int note\+Id, float nouvelle\+Valeur) const
+\item 
+\Hypertarget{classProfesseur_a1c57bf23085d4cb224488c101e2c57d3}\label{classProfesseur_a1c57bf23085d4cb224488c101e2c57d3} 
+void {\bfseries enregistrer\+Absence} (\mbox{\hyperlink{classDatabase}{Database}} \&db, unsigned int etudiant\+Id, const std\+::string \&date, const std\+::string \&heure, const std\+::string \&motif, bool justifie) const
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/Professeur.\+h\item 
+src/Professeur.\+cpp\end{DoxyCompactItemize}

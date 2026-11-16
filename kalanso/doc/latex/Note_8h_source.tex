@@ -1,0 +1,43 @@
+\doxysection{Note.\+h}
+\hypertarget{Note_8h_source}{}\label{Note_8h_source}\index{src/Note.h@{src/Note.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ \_Note\_h\_}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ \_Note\_h\_}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}Matiere.h"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include<string>}}
+\DoxyCodeLine{00006\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classNote}{Note}}\{}
+\DoxyCodeLine{00007\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00008\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ idN;}
+\DoxyCodeLine{00009\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ Valeur,Coef;}
+\DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ std::string\ Appreciation;}
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classMatiere}{Matiere}}\ mat;}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classNote}{Note}}();}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classNote}{Note}}(\textcolor{keywordtype}{float}\ val,\ \textcolor{keywordtype}{float}\ cf,\textcolor{keyword}{const}\ std::string\&\ Appr,\textcolor{keyword}{const}\ \mbox{\hyperlink{classMatiere}{Matiere}}\&\ m,\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ Id);}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classNote}{Note}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classNote}{Note}}\ \&n);}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classNote}{\string~Note}}();}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ getValeur()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ getcoef()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ getId()\textcolor{keyword}{const};}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ std::string\ getAppr()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ setValeur(\textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\&\ val);}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ setCoef(\textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\&\ nCoef);}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ setApprec(\textcolor{keyword}{const}\ std::string\&\ Appr);}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ setNote\ (\textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ val,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ cf,\textcolor{keyword}{const}\ std::string\&\ Appr,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classMatiere}{Matiere}}\ m,\textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ Id);}
+\DoxyCodeLine{00035\ \};}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

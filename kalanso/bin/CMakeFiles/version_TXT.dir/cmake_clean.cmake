@@ -1,0 +1,43 @@
+file(REMOVE_RECURSE
+  "CMakeFiles/version_TXT.dir/src/Absence.cpp.o"
+  "CMakeFiles/version_TXT.dir/src/Absence.cpp.o.d"
+  "CMakeFiles/version_TXT.dir/src/Actualite.cpp.o"
+  "CMakeFiles/version_TXT.dir/src/Actualite.cpp.o.d"
+  "CMakeFiles/version_TXT.dir/src/Administrateur.cpp.o"
+  "CMakeFiles/version_TXT.dir/src/Administrateur.cpp.o.d"
+  "CMakeFiles/version_TXT.dir/src/ClassEtu.cpp.o"
+  "CMakeFiles/version_TXT.dir/src/ClassEtu.cpp.o.d"
+  "CMakeFiles/version_TXT.dir/src/Database.cpp.o"
+  "CMakeFiles/version_TXT.dir/src/Database.cpp.o.d"
+  "CMakeFiles/version_TXT.dir/src/Date.cpp.o"
+  "CMakeFiles/version_TXT.dir/src/Date.cpp.o.d"
+  "CMakeFiles/version_TXT.dir/src/EDT.cpp.o"
+  "CMakeFiles/version_TXT.dir/src/EDT.cpp.o.d"
+  "CMakeFiles/version_TXT.dir/src/Etudiant.cpp.o"
+  "CMakeFiles/version_TXT.dir/src/Etudiant.cpp.o.d"
+  "CMakeFiles/version_TXT.dir/src/Heure.cpp.o"
+  "CMakeFiles/version_TXT.dir/src/Heure.cpp.o.d"
+  "CMakeFiles/version_TXT.dir/src/Matiere.cpp.o"
+  "CMakeFiles/version_TXT.dir/src/Matiere.cpp.o.d"
+  "CMakeFiles/version_TXT.dir/src/Note.cpp.o"
+  "CMakeFiles/version_TXT.dir/src/Note.cpp.o.d"
+  "CMakeFiles/version_TXT.dir/src/Personne.cpp.o"
+  "CMakeFiles/version_TXT.dir/src/Personne.cpp.o.d"
+  "CMakeFiles/version_TXT.dir/src/Professeur.cpp.o"
+  "CMakeFiles/version_TXT.dir/src/Professeur.cpp.o.d"
+  "CMakeFiles/version_TXT.dir/src/WinTXT.cpp.o"
+  "CMakeFiles/version_TXT.dir/src/WinTXT.cpp.o.d"
+  "CMakeFiles/version_TXT.dir/src/cour.cpp.o"
+  "CMakeFiles/version_TXT.dir/src/cour.cpp.o.d"
+  "CMakeFiles/version_TXT.dir/src/main_txt.cpp.o"
+  "CMakeFiles/version_TXT.dir/src/main_txt.cpp.o.d"
+  "CMakeFiles/version_TXT.dir/src/txtApp.cpp.o"
+  "CMakeFiles/version_TXT.dir/src/txtApp.cpp.o.d"
+  "version_TXT"
+  "version_TXT.pdb"
+)
+
+# Per-language clean rules from dependency scanning.
+foreach(lang CXX)
+  include(CMakeFiles/version_TXT.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()

@@ -1,0 +1,265 @@
+\doxysection{Database.\+h}
+\hypertarget{Database_8h_source}{}\label{Database_8h_source}\index{src/Database.h@{src/Database.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ DATABASE\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ DATABASE\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <sqlite3.h>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structPersonneDB}{PersonneDB}}\ \{}
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ id;}
+\DoxyCodeLine{00010\ \ \ \ \ std::string\ identifiant;}
+\DoxyCodeLine{00011\ \ \ \ \ std::string\ nom;}
+\DoxyCodeLine{00012\ \ \ \ \ std::string\ prenom;}
+\DoxyCodeLine{00013\ \ \ \ \ std::string\ mot\_de\_passe;}
+\DoxyCodeLine{00014\ \ \ \ \ std::string\ role;\ \textcolor{comment}{//\ "{}etudiant"{},\ "{}professeur"{},\ "{}admin"{}}}
+\DoxyCodeLine{00015\ \ \ \ \ std::string\ photo\_path;}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ classe\_id;}
+\DoxyCodeLine{00017\ \ \ \ \ std::string\ classe\_nom;}
+\DoxyCodeLine{00018\ \};}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structNoteDB}{NoteDB}}\ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ id;}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{float}\ \ valeur;}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{float}\ \ coef;}
+\DoxyCodeLine{00024\ \ \ \ \ std::string\ appreciation;}
+\DoxyCodeLine{00025\ \ \ \ \ std::string\ matiere;}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ etudiant\_id;}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ matiere\_id;}
+\DoxyCodeLine{00028\ \};}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structAbsenceDB}{AbsenceDB}}\ \{}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ id;}
+\DoxyCodeLine{00033\ \ \ \ \ std::string\ date;}
+\DoxyCodeLine{00034\ \ \ \ \ std::string\ motif;}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ justifie;}
+\DoxyCodeLine{00036\ \ \ \ \ std::string\ heure;}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ etudiant\_id;}
+\DoxyCodeLine{00038\ \};}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structMatiereDB}{MatiereDB}}\ \{}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ id;}
+\DoxyCodeLine{00042\ \ \ \ \ std::string\ nom;}
+\DoxyCodeLine{00043\ \ \ \ \ std::string\ apogee;}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{float}\ \ coef;}
+\DoxyCodeLine{00045\ \};}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structClasseDB}{ClasseDB}}\ \{}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ id;}
+\DoxyCodeLine{00049\ \ \ \ \ std::string\ nom;}
+\DoxyCodeLine{00050\ \ \ \ \ std::string\ niveau;}
+\DoxyCodeLine{00051\ \ \ \ \ std::string\ voie;}
+\DoxyCodeLine{00052\ \};}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structClasseMatiereDB}{ClasseMatiereDB}}\ \{}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ classe\_id;}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ matiere\_id;}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ prof\_id;}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ obligatoire;}
+\DoxyCodeLine{00059\ \ \ \ \ std::string\ classe\_nom;}
+\DoxyCodeLine{00060\ \ \ \ \ std::string\ matiere\_nom;}
+\DoxyCodeLine{00061\ \ \ \ \ std::string\ prof\_nom;}
+\DoxyCodeLine{00062\ \ \ \ \ std::string\ type\_matiere;}
+\DoxyCodeLine{00063\ \};}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structCoursDB}{CoursDB}}\ \{}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ id;}
+\DoxyCodeLine{00067\ \ \ \ \ std::string\ jour;}
+\DoxyCodeLine{00068\ \ \ \ \ std::string\ heure\_debut;}
+\DoxyCodeLine{00069\ \ \ \ \ std::string\ heure\_fin;}
+\DoxyCodeLine{00070\ \ \ \ \ std::string\ salle;}
+\DoxyCodeLine{00071\ \ \ \ \ std::string\ classe\_nom;}
+\DoxyCodeLine{00072\ \ \ \ \ std::string\ matiere\_nom;}
+\DoxyCodeLine{00073\ \ \ \ \ std::string\ prof\_nom;}
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ classe\_id;}
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ matiere\_id;}
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ prof\_id;}
+\DoxyCodeLine{00077\ \};}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structActualiteDB}{ActualiteDB}}\ \{}
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ id;}
+\DoxyCodeLine{00081\ \ \ \ \ std::string\ titre;}
+\DoxyCodeLine{00082\ \ \ \ \ std::string\ contenu;}
+\DoxyCodeLine{00083\ \ \ \ \ std::string\ date\_publication;}
+\DoxyCodeLine{00084\ \};}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classDatabase}{Database}}\{}
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ sqlite3*\ db;\ }
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ execSQL(\textcolor{keyword}{const}\ std::string\&\ sql);}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ ensureOpen(\textcolor{keyword}{const}\ std::string\&\ contexte)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ prepareStatement(\textcolor{keyword}{const}\ std::string\&\ sql,\ sqlite3\_stmt**\ stmt)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ executeNonQuery(sqlite3\_stmt*\ stmt,\ \textcolor{keyword}{const}\ std::string\&\ contexte)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ tableHasColumn(\textcolor{keyword}{const}\ std::string\&\ tableName,\ \textcolor{keyword}{const}\ std::string\&\ columnName)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ personneExiste(\textcolor{keywordtype}{int}\ personneId)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ personneAvecRoleExiste(\textcolor{keywordtype}{int}\ personneId,\ \textcolor{keyword}{const}\ std::string\&\ role)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ classeExiste(\textcolor{keywordtype}{int}\ classeId)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ matiereExiste(\textcolor{keywordtype}{int}\ matiereId)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ profEnseigneMatiere(\textcolor{keywordtype}{int}\ profId,\ \textcolor{keywordtype}{int}\ matiereId)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ matiereAffecteeClasse(\textcolor{keywordtype}{int}\ classeId,\ \textcolor{keywordtype}{int}\ matiereId)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ profAffecteClasseMatiere(\textcolor{keywordtype}{int}\ classeId,\ \textcolor{keywordtype}{int}\ matiereId,\ \textcolor{keywordtype}{int}\ profId)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ etudiantInscritMatiere(\textcolor{keywordtype}{int}\ etudiantId,\ \textcolor{keywordtype}{int}\ matiereId)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ ensureIdentifiantsPersonnes();}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ std::string\ construireIdentifiant(\textcolor{keyword}{const}\ std::string\&\ role,\ \textcolor{keywordtype}{int}\ numero)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ prochainNumeroIdentifiant(\textcolor{keyword}{const}\ std::string\&\ role)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ definirProchainNumeroIdentifiant(\textcolor{keyword}{const}\ std::string\&\ role,\ \textcolor{keywordtype}{int}\ nextValue)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ synchroniserMatieresEtudiantDepuisClasse(\textcolor{keywordtype}{int}\ etudiantId,\ \textcolor{keywordtype}{int}\ classeId);}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ initialiserDonneesCoherentes();}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ insererPersonne(\textcolor{keyword}{const}\ std::string\&\ nom,\ \textcolor{keyword}{const}\ std::string\&\ prenom,}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ mdp,\ \textcolor{keyword}{const}\ std::string\&\ role);}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00114\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classDatabase}{Database}}();}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classDatabase}{\string~Database}}();}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ init();}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ close();}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structPersonneDB}{PersonneDB}}\ authentifier(\textcolor{keyword}{const}\ std::string\&\ identifiant,\ \textcolor{keyword}{const}\ std::string\&\ mdp);}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ creerEtudiant(\textcolor{keyword}{const}\ std::string\&\ nom,\ \textcolor{keyword}{const}\ std::string\&\ prenom,\ \textcolor{keyword}{const}\ std::string\&\ mdp);}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ creerProfesseur(\textcolor{keyword}{const}\ std::string\&\ nom,\ \textcolor{keyword}{const}\ std::string\&\ prenom,\ \textcolor{keyword}{const}\ std::string\&\ mdp);}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00129\ \ \ \ \ }
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ creerAdmin(\textcolor{keyword}{const}\ std::string\&\ nom,\ \textcolor{keyword}{const}\ std::string\&\ prenom,\ \textcolor{keyword}{const}\ std::string\&\ mdp);}
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ supprimerCompte(\textcolor{keywordtype}{int}\ personneId);}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ std::vector<PersonneDB>\ getTousEtudiants();}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ std::vector<PersonneDB>\ getTousProfesseurs();}
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ std::vector<PersonneDB>\ getTousUtilisateurs();}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structPersonneDB}{PersonneDB}}\ getPersonneParId(\textcolor{keywordtype}{int}\ personneId);}
+\DoxyCodeLine{00145\ }
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ modifierPhotoProfil(\textcolor{keywordtype}{int}\ personneId,\ \textcolor{keyword}{const}\ std::string\&\ photoPath);}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ assignerEtudiantClasse(\textcolor{keywordtype}{int}\ etudiantId,\ \textcolor{keywordtype}{int}\ classeId);}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ getPersonneIdParIdentifiant(\textcolor{keyword}{const}\ std::string\&\ identifiant);}
+\DoxyCodeLine{00153\ }
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ std::string\ getIdentifiantParId(\textcolor{keywordtype}{int}\ personneId);}
+\DoxyCodeLine{00156\ }
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ modifierMotDePasse(\textcolor{keywordtype}{int}\ personneId,\ \textcolor{keyword}{const}\ std::string\&\ nouveauMdp);}
+\DoxyCodeLine{00159\ }
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ ajouterNote(\textcolor{keywordtype}{int}\ etudiantId,\ \textcolor{keywordtype}{int}\ matiereId,\ \textcolor{keywordtype}{float}\ valeur,\ \textcolor{keywordtype}{float}\ coef,\ \textcolor{keyword}{const}\ std::string\&\ appreciation);}
+\DoxyCodeLine{00162\ }
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ modifierNote(\textcolor{keywordtype}{int}\ noteId,\ \textcolor{keywordtype}{float}\ nouvelleValeur);}
+\DoxyCodeLine{00164\ }
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ supprimerNote(\textcolor{keywordtype}{int}\ noteId);}
+\DoxyCodeLine{00167\ }
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ std::vector<NoteDB>\ getNotes(\textcolor{keywordtype}{int}\ etudiantId);}
+\DoxyCodeLine{00170\ }
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ std::vector<NoteDB>\ getNotesByMatiere(\textcolor{keywordtype}{int}\ etudiantId,\ \textcolor{keywordtype}{int}\ matiereId);}
+\DoxyCodeLine{00173\ }
+\DoxyCodeLine{00174\ }
+\DoxyCodeLine{00175\ }
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ getMoyenne(\textcolor{keywordtype}{int}\ etudiantId,\ \textcolor{keywordtype}{int}\ matiereId);}
+\DoxyCodeLine{00177\ }
+\DoxyCodeLine{00178\ \ \ \ \ }
+\DoxyCodeLine{00179\ }
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ ajouterAbsence(\textcolor{keywordtype}{int}\ etudiantId,\ \textcolor{keyword}{const}\ std::string\&\ date,\ \textcolor{keyword}{const}\ std::string\&\ heure,}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ motif,\ \textcolor{keywordtype}{bool}\ justifie);}
+\DoxyCodeLine{00183\ }
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ std::vector<AbsenceDB>\ getAbsences(\textcolor{keywordtype}{int}\ etudiantId);}
+\DoxyCodeLine{00186\ }
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ getNbAbsences(\textcolor{keywordtype}{int}\ etudiantId);}
+\DoxyCodeLine{00189\ }
+\DoxyCodeLine{00190\ \ \ \ \ }
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ ajouterMatiere(\textcolor{keyword}{const}\ std::string\&\ nom,\ \textcolor{keyword}{const}\ std::string\&\ apogee,\ \textcolor{keywordtype}{float}\ coef);}
+\DoxyCodeLine{00192\ }
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ ajouterClasse(\textcolor{keyword}{const}\ std::string\&\ nom,\ \textcolor{keyword}{const}\ std::string\&\ niveau,\ \textcolor{keyword}{const}\ std::string\&\ voie);}
+\DoxyCodeLine{00195\ }
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ std::vector<ClasseDB>\ getToutesLesClasses();}
+\DoxyCodeLine{00197\ }
+\DoxyCodeLine{00198\ \ \ \ \ }
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ std::vector<MatiereDB>\ getToutesLesmatieres();}
+\DoxyCodeLine{00200\ }
+\DoxyCodeLine{00201\ \ \ \ \ }
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ std::vector<MatiereDB>\ getMatieresProfesseur(\textcolor{keywordtype}{int}\ profId);}
+\DoxyCodeLine{00203\ }
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ std::vector<MatiereDB>\ getMatieresEtudiant(\textcolor{keywordtype}{int}\ etudiantId);}
+\DoxyCodeLine{00205\ }
+\DoxyCodeLine{00206\ \ \ \ \ }
+\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ std::vector<PersonneDB>\ getEtudiantsParMatiere(\textcolor{keywordtype}{int}\ matiereId);}
+\DoxyCodeLine{00208\ }
+\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ std::vector<PersonneDB>\ getEtudiantsClasse(\textcolor{keywordtype}{int}\ classeId);}
+\DoxyCodeLine{00210\ }
+\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ std::vector<ClasseMatiereDB>\ getMatieresClasse(\textcolor{keywordtype}{int}\ classeId);}
+\DoxyCodeLine{00213\ }
+\DoxyCodeLine{00214\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00215\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ assignerProfMatiere(\textcolor{keywordtype}{int}\ profId,\ \textcolor{keywordtype}{int}\ matiereId);}
+\DoxyCodeLine{00216\ }
+\DoxyCodeLine{00217\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00218\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ affecterMatiereClasse(\textcolor{keywordtype}{int}\ classeId,\ \textcolor{keywordtype}{int}\ matiereId,\ \textcolor{keywordtype}{int}\ profId,\ \textcolor{keywordtype}{bool}\ obligatoire);}
+\DoxyCodeLine{00219\ }
+\DoxyCodeLine{00220\ }
+\DoxyCodeLine{00221\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ inscrireEtudiantMatiere(\textcolor{keywordtype}{int}\ etudiantId,\ \textcolor{keywordtype}{int}\ matiereId);}
+\DoxyCodeLine{00222\ }
+\DoxyCodeLine{00223\ \ \ \ \ }
+\DoxyCodeLine{00224\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ ajouterCours(\textcolor{keyword}{const}\ std::string\&\ jour,\ \textcolor{keyword}{const}\ std::string\&\ heureDebut,}
+\DoxyCodeLine{00225\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ heureFin,\ \textcolor{keyword}{const}\ std::string\&\ salle,}
+\DoxyCodeLine{00226\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ classeId,\ \textcolor{keywordtype}{int}\ matiereId,\ \textcolor{keywordtype}{int}\ profId);}
+\DoxyCodeLine{00227\ }
+\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00229\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ modifierCours(\textcolor{keywordtype}{int}\ coursId,\ \textcolor{keyword}{const}\ std::string\&\ jour,\ \textcolor{keyword}{const}\ std::string\&\ heureDebut,}
+\DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ heureFin,\ \textcolor{keyword}{const}\ std::string\&\ salle);}
+\DoxyCodeLine{00231\ }
+\DoxyCodeLine{00232\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00233\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ supprimerCours(\textcolor{keywordtype}{int}\ coursId);}
+\DoxyCodeLine{00234\ }
+\DoxyCodeLine{00235\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00236\ \ \ \ \ \ \ \ \ std::vector<CoursDB>\ getEDTEtudiant(\textcolor{keywordtype}{int}\ etudiantId);}
+\DoxyCodeLine{00237\ }
+\DoxyCodeLine{00238\ }
+\DoxyCodeLine{00239\ }
+\DoxyCodeLine{00240\ \ \ \ \ \ \ \ \ std::vector<CoursDB>\ getEDTProfesseur(\textcolor{keywordtype}{int}\ profId);}
+\DoxyCodeLine{00241\ }
+\DoxyCodeLine{00242\ \ \ \ \ }
+\DoxyCodeLine{00243\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00244\ \ \ \ \ \ \ \ \ std::vector<CoursDB>\ getToutEDT();}
+\DoxyCodeLine{00245\ }
+\DoxyCodeLine{00246\ }
+\DoxyCodeLine{00247\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ publierActualite(\textcolor{keyword}{const}\ std::string\&\ titre,\ \textcolor{keyword}{const}\ std::string\&\ contenu,}
+\DoxyCodeLine{00248\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ datePublication);}
+\DoxyCodeLine{00249\ }
+\DoxyCodeLine{00250\ \ \ \ \ \ \ \ \ std::vector<ActualiteDB>\ getToutesActualites();}
+\DoxyCodeLine{00251\ }
+\DoxyCodeLine{00252\ \ \ \ \ }
+\DoxyCodeLine{00253\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ supprimerActualite(\textcolor{keywordtype}{int}\ actualiteId);}
+\DoxyCodeLine{00254\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00255\ }
+\DoxyCodeLine{00256\ \};}
+\DoxyCodeLine{00257\ }
+\DoxyCodeLine{00258\ }
+\DoxyCodeLine{00259\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ DATABASE\_H}}
+
+\end{DoxyCode}

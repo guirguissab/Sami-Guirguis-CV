@@ -1,0 +1,166 @@
+\doxysection{Actualite Class Reference}
+\hypertarget{classActualite}{}\label{classActualite}\index{Actualite@{Actualite}}
+
+
+Représente les actualite dans l\textquotesingle{}ecole.  
+
+
+
+
+{\ttfamily \#include $<$Actualite.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classActualite_a6eb7c8b8ef7a4d3d5409a525feaa5db9}\label{classActualite_a6eb7c8b8ef7a4d3d5409a525feaa5db9} 
+{\bfseries Actualite} ()
+\begin{DoxyCompactList}\small\item\em Constructeur par défaut. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classActualite_a2ae2c013a4b62f166a14341965bf6bde}{Actualite}} (const unsigned int \&id, const std\+::string \&tit, const std\+::string \&cont, const \mbox{\hyperlink{classDate}{Date}} \&datepub)
+\begin{DoxyCompactList}\small\item\em Constructeur qui donne. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{classActualite_aa0fac25366243ddeb5af01f0728ac510}{get\+Id}} () const
+\begin{DoxyCompactList}\small\item\em fonction qui retourn l\textquotesingle{}identifiant de l\textquotesingle{}article \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classActualite_a29ac3fc586cb317cb95b01129c6894c4}{get\+Titre}} () const
+\begin{DoxyCompactList}\small\item\em fonction qui retourn le titre de l\textquotesingle{}article \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classActualite_a87a54f9809793ea9892c79db3e291065}{get\+Contenu}} () const
+\begin{DoxyCompactList}\small\item\em fonction qui retourn le contenue de l\textquotesingle{}article \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDate}{Date}} \mbox{\hyperlink{classActualite_ac2a91c9903f3b5c2b14f33a8022a6a89}{get\+Date}} () const
+\begin{DoxyCompactList}\small\item\em fonction qui retourn la date de l\textquotesingle{}article \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classActualite_a1942f8f8be87aff96a04e05d20b8552b}{set\+Titre}} (const std\+::string \&tit)
+\begin{DoxyCompactList}\small\item\em fonction qui change la titre de l\textquotesingle{}article \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classActualite_a27c937f4b3af02984502d879f01a8770}{set\+Contenu}} (const std\+::string \&cont)
+\begin{DoxyCompactList}\small\item\em fonction qui change le contenue de l\textquotesingle{}article \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classActualite_aeb51b00ce7dde52ae367c953cf40f21a}{set\+Date}} (const \mbox{\hyperlink{classDate}{Date}} \&datepub)
+\begin{DoxyCompactList}\small\item\em fonction qui change le contenue de l\textquotesingle{}article \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Représente les actualite dans l\textquotesingle{}ecole. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classActualite_a2ae2c013a4b62f166a14341965bf6bde}\label{classActualite_a2ae2c013a4b62f166a14341965bf6bde} 
+\index{Actualite@{Actualite}!Actualite@{Actualite}}
+\index{Actualite@{Actualite}!Actualite@{Actualite}}
+\doxysubsubsection{\texorpdfstring{Actualite()}{Actualite()}}
+{\footnotesize\ttfamily Actualite\+::\+Actualite (\begin{DoxyParamCaption}\item[{const unsigned int \&}]{id,  }\item[{const std\+::string \&}]{tit,  }\item[{const std\+::string \&}]{cont,  }\item[{const \mbox{\hyperlink{classDate}{Date}} \&}]{datepub }\end{DoxyParamCaption})}
+
+
+
+Constructeur qui donne. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & Identifiant unique de l\textquotesingle{}actualite \\
+\hline
+{\em tit} & Le titre de l\textquotesingle{}article \\
+\hline
+{\em cont} & Le contenue de l\textquotesingle{}article \\
+\hline
+{\em datepub} & est la date de publication de l\textquotesingle{}article \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classActualite_a87a54f9809793ea9892c79db3e291065}\label{classActualite_a87a54f9809793ea9892c79db3e291065} 
+\index{Actualite@{Actualite}!getContenu@{getContenu}}
+\index{getContenu@{getContenu}!Actualite@{Actualite}}
+\doxysubsubsection{\texorpdfstring{getContenu()}{getContenu()}}
+{\footnotesize\ttfamily std\+::string Actualite\+::get\+Contenu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+fonction qui retourn le contenue de l\textquotesingle{}article 
+
+\begin{DoxyReturn}{Returns}
+le contenue l\textquotesingle{}article 
+\end{DoxyReturn}
+\Hypertarget{classActualite_ac2a91c9903f3b5c2b14f33a8022a6a89}\label{classActualite_ac2a91c9903f3b5c2b14f33a8022a6a89} 
+\index{Actualite@{Actualite}!getDate@{getDate}}
+\index{getDate@{getDate}!Actualite@{Actualite}}
+\doxysubsubsection{\texorpdfstring{getDate()}{getDate()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classDate}{Date}} Actualite\+::get\+Date (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+fonction qui retourn la date de l\textquotesingle{}article 
+
+\begin{DoxyReturn}{Returns}
+la date l\textquotesingle{}article 
+\end{DoxyReturn}
+\Hypertarget{classActualite_aa0fac25366243ddeb5af01f0728ac510}\label{classActualite_aa0fac25366243ddeb5af01f0728ac510} 
+\index{Actualite@{Actualite}!getId@{getId}}
+\index{getId@{getId}!Actualite@{Actualite}}
+\doxysubsubsection{\texorpdfstring{getId()}{getId()}}
+{\footnotesize\ttfamily unsigned int Actualite\+::get\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+fonction qui retourn l\textquotesingle{}identifiant de l\textquotesingle{}article 
+
+\begin{DoxyReturn}{Returns}
+l\textquotesingle{}identifiant unique de l\textquotesingle{}article 
+\end{DoxyReturn}
+\Hypertarget{classActualite_a29ac3fc586cb317cb95b01129c6894c4}\label{classActualite_a29ac3fc586cb317cb95b01129c6894c4} 
+\index{Actualite@{Actualite}!getTitre@{getTitre}}
+\index{getTitre@{getTitre}!Actualite@{Actualite}}
+\doxysubsubsection{\texorpdfstring{getTitre()}{getTitre()}}
+{\footnotesize\ttfamily std\+::string Actualite\+::get\+Titre (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+fonction qui retourn le titre de l\textquotesingle{}article 
+
+\begin{DoxyReturn}{Returns}
+le titre l\textquotesingle{}article 
+\end{DoxyReturn}
+\Hypertarget{classActualite_a27c937f4b3af02984502d879f01a8770}\label{classActualite_a27c937f4b3af02984502d879f01a8770} 
+\index{Actualite@{Actualite}!setContenu@{setContenu}}
+\index{setContenu@{setContenu}!Actualite@{Actualite}}
+\doxysubsubsection{\texorpdfstring{setContenu()}{setContenu()}}
+{\footnotesize\ttfamily void Actualite\+::set\+Contenu (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{cont }\end{DoxyParamCaption})}
+
+
+
+fonction qui change le contenue de l\textquotesingle{}article 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cont} & le nouvel contenu de l\textquotesingle{}article \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classActualite_aeb51b00ce7dde52ae367c953cf40f21a}\label{classActualite_aeb51b00ce7dde52ae367c953cf40f21a} 
+\index{Actualite@{Actualite}!setDate@{setDate}}
+\index{setDate@{setDate}!Actualite@{Actualite}}
+\doxysubsubsection{\texorpdfstring{setDate()}{setDate()}}
+{\footnotesize\ttfamily void Actualite\+::set\+Date (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classDate}{Date}} \&}]{datepub }\end{DoxyParamCaption})}
+
+
+
+fonction qui change le contenue de l\textquotesingle{}article 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cont} & le nouvel contenu de l\textquotesingle{}article \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classActualite_a1942f8f8be87aff96a04e05d20b8552b}\label{classActualite_a1942f8f8be87aff96a04e05d20b8552b} 
+\index{Actualite@{Actualite}!setTitre@{setTitre}}
+\index{setTitre@{setTitre}!Actualite@{Actualite}}
+\doxysubsubsection{\texorpdfstring{setTitre()}{setTitre()}}
+{\footnotesize\ttfamily void Actualite\+::set\+Titre (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{tit }\end{DoxyParamCaption})}
+
+
+
+fonction qui change la titre de l\textquotesingle{}article 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tit} & la nouvelle titre de l\textquotesingle{}article \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/Actualite.\+h\item 
+src/Actualite.\+cpp\end{DoxyCompactItemize}

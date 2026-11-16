@@ -1,0 +1,62 @@
+\doxysection{Administrateur Class Reference}
+\hypertarget{classAdministrateur}{}\label{classAdministrateur}\index{Administrateur@{Administrateur}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classAdministrateur_a32b28804bebe1f73eeb73fe75ab5ffe3}\label{classAdministrateur_a32b28804bebe1f73eeb73fe75ab5ffe3} 
+{\bfseries Administrateur} (const \mbox{\hyperlink{classPersonne}{Personne}} \&profil)
+\item 
+\Hypertarget{classAdministrateur_aed74b3400912f906f3cdfeed6a76ad77}\label{classAdministrateur_aed74b3400912f906f3cdfeed6a76ad77} 
+\mbox{\hyperlink{classPersonne}{Personne}} {\bfseries get\+Profil} () const
+\item 
+\Hypertarget{classAdministrateur_a9838ffbed7171f12cc968999624d3f02}\label{classAdministrateur_a9838ffbed7171f12cc968999624d3f02} 
+\mbox{\hyperlink{classEtudiant}{Etudiant}} {\bfseries creer\+Compte\+Etudiant} (const unsigned int id, const std\+::string \&nom, const std\+::string \&prenom, const std\+::string \&mot\+De\+Passe, const unsigned int \&j, const unsigned int \&m, const unsigned int \&a) const
+\item 
+\Hypertarget{classAdministrateur_ada5026547078a6240e67e5781846c909}\label{classAdministrateur_ada5026547078a6240e67e5781846c909} 
+\mbox{\hyperlink{classProfesseur}{Professeur}} {\bfseries creer\+Compte\+Professeur} (const unsigned int id, const std\+::string \&nom, const std\+::string \&prenom, const std\+::string \&mot\+De\+Passe, const unsigned int \&j, const unsigned int \&m, const unsigned int \&a) const
+\item 
+\Hypertarget{classAdministrateur_a7387b33c1c7de0e6e33df5711ab39b93}\label{classAdministrateur_a7387b33c1c7de0e6e33df5711ab39b93} 
+\mbox{\hyperlink{classAdministrateur}{Administrateur}} {\bfseries creer\+Compte\+Admin} (unsigned int id, const std\+::string \&nom, const std\+::string \&prenom, const std\+::string \&mot\+De\+Passe, const unsigned int \&j, const unsigned int \&m, const unsigned int \&a) const
+\item 
+\Hypertarget{classAdministrateur_a4590d4e0b5cf51c19465ce940e29db96}\label{classAdministrateur_a4590d4e0b5cf51c19465ce940e29db96} 
+\mbox{\hyperlink{classMatiere}{Matiere}} {\bfseries creer\+Matiere} (unsigned int id, const std\+::string \&nom, const std\+::string \&apogee, float coef) const
+\item 
+\Hypertarget{classAdministrateur_a49e388baf0821709249df3d8bcdd7742}\label{classAdministrateur_a49e388baf0821709249df3d8bcdd7742} 
+\mbox{\hyperlink{classClassEtu}{Class\+Etu}} {\bfseries creer\+Class} (const unsigned int id, const int numclass, const std\+::string niv, const std\+::string voi) const
+\item 
+\Hypertarget{classAdministrateur_a638a16472bf83800b7c78f03b37270aa}\label{classAdministrateur_a638a16472bf83800b7c78f03b37270aa} 
+void {\bfseries inscrire\+Class\+Matiere} (\mbox{\hyperlink{classClassEtu}{Class\+Etu}} \&classetu, const \mbox{\hyperlink{classMatiere}{Matiere}} \&matiere) const
+\item 
+\Hypertarget{classAdministrateur_a8c0914d4567b1aabac8681de801f2a9a}\label{classAdministrateur_a8c0914d4567b1aabac8681de801f2a9a} 
+void {\bfseries inscrire\+Etudiant\+Class} (\mbox{\hyperlink{classClassEtu}{Class\+Etu}} \&classetu, \mbox{\hyperlink{classEtudiant}{Etudiant}} \&etudiant) const
+\item 
+\Hypertarget{classAdministrateur_a7fba22ff9fb850357aa2f5fdebea08fc}\label{classAdministrateur_a7fba22ff9fb850357aa2f5fdebea08fc} 
+void {\bfseries affecter\+Professeur\+Matiere} (\mbox{\hyperlink{classProfesseur}{Professeur}} \&professeur, const \mbox{\hyperlink{classMatiere}{Matiere}} \&matiere) const
+\item 
+\Hypertarget{classAdministrateur_a21c977232177e34718b4cfc9c276419b}\label{classAdministrateur_a21c977232177e34718b4cfc9c276419b} 
+void {\bfseries attribuer\+EDTClass} (\mbox{\hyperlink{classClassEtu}{Class\+Etu}} \&classetu, const \mbox{\hyperlink{classEDT}{EDT}} \&edt) const
+\item 
+\Hypertarget{classAdministrateur_ab6ac9ade098502928527410edca3a77b}\label{classAdministrateur_ab6ac9ade098502928527410edca3a77b} 
+void {\bfseries attribuer\+EDTProfesseut} (\mbox{\hyperlink{classProfesseur}{Professeur}} \&prof, const \mbox{\hyperlink{classEDT}{EDT}} \&edt) const
+\item 
+\Hypertarget{classAdministrateur_a433d14011b13566551164db4568374c9}\label{classAdministrateur_a433d14011b13566551164db4568374c9} 
+void {\bfseries attribuer\+Class\+Professeut} (\mbox{\hyperlink{classProfesseur}{Professeur}} \&prof, const \mbox{\hyperlink{classClassEtu}{Class\+Etu}} \&cla) const
+\item 
+\Hypertarget{classAdministrateur_a4df4de962c3ddc51b6a680c46e2fe0cb}\label{classAdministrateur_a4df4de962c3ddc51b6a680c46e2fe0cb} 
+void {\bfseries ajouter\+Cours} (\mbox{\hyperlink{classEDT}{EDT}} \&edt, const \mbox{\hyperlink{classcour}{cour}} \&c) const
+\item 
+\Hypertarget{classAdministrateur_a2e8ae130fd3112e25daa8ac1079d1410}\label{classAdministrateur_a2e8ae130fd3112e25daa8ac1079d1410} 
+bool {\bfseries modifier\+Cours} (\mbox{\hyperlink{classEDT}{EDT}} \&edt, \mbox{\hyperlink{classcour}{cour}} \&cours) const
+\item 
+\Hypertarget{classAdministrateur_aed7e025f5fd3bc13adcd54e6a396368a}\label{classAdministrateur_aed7e025f5fd3bc13adcd54e6a396368a} 
+bool {\bfseries supprimer\+Cours} (\mbox{\hyperlink{classEDT}{EDT}} \&edt, unsigned int \mbox{\hyperlink{classcour}{cour}}) const
+\item 
+\Hypertarget{classAdministrateur_ad406411d7986bea88754ac30a68f5a4c}\label{classAdministrateur_ad406411d7986bea88754ac30a68f5a4c} 
+bool {\bfseries suprrimer\+Etudiant\+Class} (\mbox{\hyperlink{classClassEtu}{Class\+Etu}} \&cla, const unsigned int IdE)
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/Administrateur.\+h\item 
+src/Administrateur.\+cpp\end{DoxyCompactItemize}

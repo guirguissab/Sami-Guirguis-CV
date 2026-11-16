@@ -1,0 +1,77 @@
+\doxysection{Administrateur.\+h}
+\hypertarget{Administrateur_8h_source}{}\label{Administrateur_8h_source}\index{src/Administrateur.h@{src/Administrateur.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ ADMINISTRATEUR\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ ADMINISTRATEUR\_H}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}EDT.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}cour.h"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}Etudiant.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}Matiere.h"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}Professeur.h"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}Personne.h"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}Actualite.h"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}ClassEtu.h"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include"{}Date.h"{}}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classDatabase}{Database}};}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classAdministrateur}{Administrateur}}\{}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classPersonne}{Personne}}\ p;}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classAdministrateur}{Administrateur}}();}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classAdministrateur}{Administrateur}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classPersonne}{Personne}}\&\ profil);}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classPersonne}{Personne}}\ getProfil()\textcolor{keyword}{const};}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classEtudiant}{Etudiant}}\ creerCompteEtudiant(\textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id},\ \textcolor{keyword}{const}\ std::string\&\ nom,\ \textcolor{keyword}{const}\ std::string\&\ prenom,}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ motDePasse,\textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\&\ j,\textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\&\ m,\textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\&\ a)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classProfesseur}{Professeur}}\ creerCompteProfesseur(\textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id},\ \textcolor{keyword}{const}\ std::string\&\ nom,\ \textcolor{keyword}{const}\ std::string\&\ prenom,}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ motDePasse,\textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\&\ j,\textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\&\ m,\textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\&\ a)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classAdministrateur}{Administrateur}}\ creerCompteAdmin(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id},\ \textcolor{keyword}{const}\ std::string\&\ nom,\ \textcolor{keyword}{const}\ std::string\&\ prenom,}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ motDePasse,\textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\&\ j,\textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\&\ m,\textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\&\ a)\ \textcolor{keyword}{const}\ ;}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classMatiere}{Matiere}}\ creerMatiere(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id},\ \textcolor{keyword}{const}\ std::string\&\ nom,\ \textcolor{keyword}{const}\ std::string\&\ apogee,\ \textcolor{keywordtype}{float}\ coef)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classClassEtu}{ClassEtu}}\ creerClass(\textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id},\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ numclass,\textcolor{keyword}{const}\ std::string\ niv,\textcolor{keyword}{const}\ std::string\ voi)\textcolor{keyword}{const};}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ inscrireClassMatiere(\mbox{\hyperlink{classClassEtu}{ClassEtu}}\&\ classetu,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classMatiere}{Matiere}}\&\ matiere)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ inscrireEtudiantClass(\mbox{\hyperlink{classClassEtu}{ClassEtu}}\&\ classetu,\ \mbox{\hyperlink{classEtudiant}{Etudiant}}\&\ etudiant)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ affecterProfesseurMatiere(\mbox{\hyperlink{classProfesseur}{Professeur}}\&\ professeur,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classMatiere}{Matiere}}\&\ matiere)\textcolor{keyword}{const};}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ attribuerEDTClass(\mbox{\hyperlink{classClassEtu}{ClassEtu}}\&\ classetu,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classEDT}{EDT}}\&\ edt)\textcolor{keyword}{const};}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ attribuerEDTProfesseut(\mbox{\hyperlink{classProfesseur}{Professeur}}\&\ prof,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classEDT}{EDT}}\&\ edt)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ attribuerClassProfesseut(\mbox{\hyperlink{classProfesseur}{Professeur}}\&\ prof,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classClassEtu}{ClassEtu}}\&\ cla)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ ajouterCours(\mbox{\hyperlink{classEDT}{EDT}}\&\ edt,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classcour}{cour}}\&\ c)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ modifierCours(\mbox{\hyperlink{classEDT}{EDT}}\&\ edt,\ \mbox{\hyperlink{classcour}{cour}}\&\ cours)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ supprimerCours(\mbox{\hyperlink{classEDT}{EDT}}\&\ edt,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classcour}{cour}})\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ suprrimerEtudiantClass(\mbox{\hyperlink{classClassEtu}{ClassEtu}}\&\ cla,\textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ IdE);}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*void\ inscrireClassMatiere(Database\&\ db,\ int\ ClassId,\ int\ matiereId)\ const;}}
+\DoxyCodeLine{00053\ \textcolor{comment}{\ \ \ \ \ \ \ \ void\ affecterProfesseurMatiere(Database\&\ db,\ int\ profId,\ int\ matiereId)\ const;}}
+\DoxyCodeLine{00054\ \textcolor{comment}{\ \ \ \ \ \ \ \ cour\ ajouterCours(Database\&\ db,\ const\ std::string\&\ jour,\ const\ std::string\&\ heureDebut,}}
+\DoxyCodeLine{00055\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ const\ std::string\&\ heureFin,\ const\ std::string\&\ salle,}}
+\DoxyCodeLine{00056\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ int\ classeId,\ int\ matiereId,\ int\ profId)\ const;}}
+\DoxyCodeLine{00057\ \textcolor{comment}{\ \ \ \ \ \ \ \ void\ modifierCours(Database\&\ db,\ int\ coursId,\ const\ std::string\&\ jour,}}
+\DoxyCodeLine{00058\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ const\ std::string\&\ heureDebut,\ const\ std::string\&\ heureFin,}}
+\DoxyCodeLine{00059\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ const\ std::string\&\ salle)\ const;}}
+\DoxyCodeLine{00060\ \textcolor{comment}{\ \ \ \ \ \ \ \ void\ supprimerCours(Database\&\ db,\ int\ coursId)\ const;}}
+\DoxyCodeLine{00061\ \textcolor{comment}{\ \ \ \ \ \ \ \ Actualite\ publierActualite(int\ id,\ const\ std::string\&\ titre,\ const\ std::string\&\ contenu,}}
+\DoxyCodeLine{00062\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ const\ std::string\&\ datePublication)\ const;}}
+\DoxyCodeLine{00063\ \textcolor{comment}{\ \ \ \ \ \ \ \ Actualite\ publierActualite(Database\&\ db,\ const\ std::string\&\ titre,\ const\ std::string\&\ contenu,}}
+\DoxyCodeLine{00064\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ const\ std::string\&\ datePublication)\ const;*/}}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//cette\ partie\ me\ pose\ une\ probleme}}
+\DoxyCodeLine{00066\ \};}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

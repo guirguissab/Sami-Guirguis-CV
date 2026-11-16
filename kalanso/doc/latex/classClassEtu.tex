@@ -1,0 +1,77 @@
+\doxysection{Class\+Etu Class Reference}
+\hypertarget{classClassEtu}{}\label{classClassEtu}\index{ClassEtu@{ClassEtu}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classClassEtu_a040b9071917997dd2c831644aa532368}\label{classClassEtu_a040b9071917997dd2c831644aa532368} 
+{\bfseries Class\+Etu} (const unsigned int id, const int numclass, const std\+::string niv, const std\+::string voi)
+\item 
+\Hypertarget{classClassEtu_aed421a4f8b85aaba8bfc7157c9e53e8d}\label{classClassEtu_aed421a4f8b85aaba8bfc7157c9e53e8d} 
+unsigned int {\bfseries get\+Id} () const
+\item 
+\Hypertarget{classClassEtu_a9233aef2e5d66773429bbc3f33d0b44e}\label{classClassEtu_a9233aef2e5d66773429bbc3f33d0b44e} 
+int {\bfseries getnum\+Class} () const
+\item 
+\Hypertarget{classClassEtu_a30a8bcd038279f22c35c6cbe3e19166b}\label{classClassEtu_a30a8bcd038279f22c35c6cbe3e19166b} 
+std\+::string {\bfseries getniveau} () const
+\item 
+\Hypertarget{classClassEtu_a46fa6bad94b8716cb1048d15eaae5233}\label{classClassEtu_a46fa6bad94b8716cb1048d15eaae5233} 
+std\+::string {\bfseries getvoie} () const
+\item 
+\Hypertarget{classClassEtu_ab632d43766bd3a99e3268beb4f56a444}\label{classClassEtu_ab632d43766bd3a99e3268beb4f56a444} 
+std\+::vector$<$ \mbox{\hyperlink{classMatiere}{Matiere}} $>$ {\bfseries get\+Matieres} () const
+\item 
+\Hypertarget{classClassEtu_abb81ee11f4bcfa949ace9aa2142702fc}\label{classClassEtu_abb81ee11f4bcfa949ace9aa2142702fc} 
+\mbox{\hyperlink{classEDT}{EDT}} {\bfseries getedt} () const
+\item 
+\Hypertarget{classClassEtu_a8ec9a3c9980450c565d51b83a8ba1165}\label{classClassEtu_a8ec9a3c9980450c565d51b83a8ba1165} 
+std\+::vector$<$ \mbox{\hyperlink{classEtudiant}{Etudiant}} $>$ {\bfseries get\+List\+Etu} () const
+\item 
+\Hypertarget{classClassEtu_a0738ccd602eefeef8dcc0e14f62dc02f}\label{classClassEtu_a0738ccd602eefeef8dcc0e14f62dc02f} 
+\mbox{\hyperlink{classEtudiant}{Etudiant}} \texorpdfstring{$\ast$}{*} {\bfseries get\+Etu} (const unsigned int \&IdE)
+\item 
+\Hypertarget{classClassEtu_ac7636b9eafca65a3cfd981c61a433184}\label{classClassEtu_ac7636b9eafca65a3cfd981c61a433184} 
+void {\bfseries add\+Etu} (const \mbox{\hyperlink{classEtudiant}{Etudiant}} \&Etu)
+\item 
+\Hypertarget{classClassEtu_a85f2c975d8805b06008c9cab3a1c6517}\label{classClassEtu_a85f2c975d8805b06008c9cab3a1c6517} 
+void {\bfseries add\+Matiere} (const \mbox{\hyperlink{classMatiere}{Matiere}} \&mat)
+\item 
+\Hypertarget{classClassEtu_a886b215d25b1b379d455962473322344}\label{classClassEtu_a886b215d25b1b379d455962473322344} 
+bool {\bfseries add\+Note\+Etu} (const unsigned int \&IdE, const \mbox{\hyperlink{classNote}{Note}} \&n)
+\item 
+\Hypertarget{classClassEtu_a92ec375b390edac00a4b97388bb7626f}\label{classClassEtu_a92ec375b390edac00a4b97388bb7626f} 
+bool {\bfseries modif\+Note\+Etu} (const unsigned int \&IdE, const \mbox{\hyperlink{classNote}{Note}} \&n)
+\item 
+\Hypertarget{classClassEtu_afec61057eecf736662a2366c56d0628e}\label{classClassEtu_afec61057eecf736662a2366c56d0628e} 
+bool {\bfseries add\+Absence\+Etu} (const unsigned int \&IdE, const \mbox{\hyperlink{classAbsence}{Absence}} \&ab)
+\item 
+\Hypertarget{classClassEtu_ab0824e51334f7f890915eb0dabed1db3}\label{classClassEtu_ab0824e51334f7f890915eb0dabed1db3} 
+bool {\bfseries rm\+Etu} (const unsigned int IdE)
+\item 
+\Hypertarget{classClassEtu_a90bce64df270a74a6eab3dd2c71ad631}\label{classClassEtu_a90bce64df270a74a6eab3dd2c71ad631} 
+void {\bfseries setid} (const unsigned int n\+Id)
+\item 
+\Hypertarget{classClassEtu_a12a56b5acbc5e8b1d48abe7166d48191}\label{classClassEtu_a12a56b5acbc5e8b1d48abe7166d48191} 
+void {\bfseries setnumclass} (const int numclass)
+\item 
+\Hypertarget{classClassEtu_a7b7dd991b603a4cd45886f548b826298}\label{classClassEtu_a7b7dd991b603a4cd45886f548b826298} 
+void {\bfseries setniveau} (const std\+::string niv)
+\item 
+\Hypertarget{classClassEtu_a4959e04f4c6c76caaafe5d78f22fe984}\label{classClassEtu_a4959e04f4c6c76caaafe5d78f22fe984} 
+void {\bfseries setvoie} (const std\+::string voi)
+\item 
+\Hypertarget{classClassEtu_a64a96a0c9951eb907b629426429ebff1}\label{classClassEtu_a64a96a0c9951eb907b629426429ebff1} 
+void {\bfseries addmat} (const \mbox{\hyperlink{classMatiere}{Matiere}} mat)
+\item 
+\Hypertarget{classClassEtu_a9c27be6408f413575b908961c54561c6}\label{classClassEtu_a9c27be6408f413575b908961c54561c6} 
+void {\bfseries setedt} (const \mbox{\hyperlink{classEDT}{EDT}} \&nedt)
+\item 
+\Hypertarget{classClassEtu_a5057721efddd91f53830c34662e0fca9}\label{classClassEtu_a5057721efddd91f53830c34662e0fca9} 
+void {\bfseries charger\+Depuis\+Database} (\mbox{\hyperlink{classDatabase}{Database}} \&db)
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/Class\+Etu.\+h\item 
+src/Class\+Etu.\+cpp\end{DoxyCompactItemize}

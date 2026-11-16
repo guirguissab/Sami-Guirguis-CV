@@ -1,0 +1,14 @@
+-rootPath
+/home/sami-guirguis/kalanso
+-cmake-output
+-output-file
+/home/sami-guirguis/kalanso/bin/.qt_plugins/Qt6_QmlPlugins_Imports_version_QT.cmake
+-importPath
+/home/sami-guirguis/kalanso/bin/Kalanso
+-importPath
+/home/sami-guirguis/kalanso/bin
+-importPath
+/usr/lib/x86_64-linux-gnu/qt6/qml
+-qrcFiles
+/home/sami-guirguis/kalanso/bin/.rcc/qmake_Kalanso.qrc
+/home/sami-guirguis/kalanso/bin/.rcc/version_QT_raw_qml_0.qrc

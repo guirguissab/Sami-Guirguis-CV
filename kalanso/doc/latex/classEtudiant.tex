@@ -1,0 +1,68 @@
+\doxysection{Etudiant Class Reference}
+\hypertarget{classEtudiant}{}\label{classEtudiant}\index{Etudiant@{Etudiant}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classEtudiant_ac516bf8382b594499be042052a12ce35}\label{classEtudiant_ac516bf8382b594499be042052a12ce35} 
+{\bfseries Etudiant} (const \mbox{\hyperlink{classPersonne}{Personne}} pe, \mbox{\hyperlink{classClassEtu}{Class\+Etu}} \texorpdfstring{$\ast$}{*}Cl)
+\item 
+\Hypertarget{classEtudiant_ad5503f4d748eb44b03506f9fda07ea98}\label{classEtudiant_ad5503f4d748eb44b03506f9fda07ea98} 
+\mbox{\hyperlink{classPersonne}{Personne}} \& {\bfseries get\+Profil} ()
+\item 
+\Hypertarget{classEtudiant_a970920220db67f7114568dee519344cb}\label{classEtudiant_a970920220db67f7114568dee519344cb} 
+unsigned int {\bfseries get\+Id} () const
+\item 
+\Hypertarget{classEtudiant_a2b43c9572af01016a358cc975ec63410}\label{classEtudiant_a2b43c9572af01016a358cc975ec63410} 
+\mbox{\hyperlink{classEDT}{EDT}} {\bfseries get\+EDT} () const
+\item 
+\Hypertarget{classEtudiant_abc45b76aac3ca2d18c8a88de1bee075e}\label{classEtudiant_abc45b76aac3ca2d18c8a88de1bee075e} 
+std\+::vector$<$ \mbox{\hyperlink{classNote}{Note}} $>$ {\bfseries get\+Note} () const
+\item 
+\Hypertarget{classEtudiant_a92b9db0ea849774356317b4aba352287}\label{classEtudiant_a92b9db0ea849774356317b4aba352287} 
+std\+::vector$<$ \mbox{\hyperlink{classAbsence}{Absence}} $>$ {\bfseries get\+Absence} () const
+\item 
+\Hypertarget{classEtudiant_a0a7d8a194b371c72e545e5b1e5fd0e0a}\label{classEtudiant_a0a7d8a194b371c72e545e5b1e5fd0e0a} 
+std\+::vector$<$ \mbox{\hyperlink{classMatiere}{Matiere}} $>$ {\bfseries get\+Matieres} () const
+\item 
+\Hypertarget{classEtudiant_a5f299e7e739c590ff7a71aa160b0f532}\label{classEtudiant_a5f299e7e739c590ff7a71aa160b0f532} 
+\mbox{\hyperlink{classClassEtu}{Class\+Etu}} {\bfseries get\+Class} () const
+\item 
+\Hypertarget{classEtudiant_ae3efe210c9e2ac464009b2a3933e0a93}\label{classEtudiant_ae3efe210c9e2ac464009b2a3933e0a93} 
+std\+::string {\bfseries getniveau} () const
+\item 
+\Hypertarget{classEtudiant_a752b188271c4c43c4dd0df11a9516ae5}\label{classEtudiant_a752b188271c4c43c4dd0df11a9516ae5} 
+std\+::string {\bfseries getvoie} () const
+\item 
+\Hypertarget{classEtudiant_a032864b3a3159d82f695c9a10888de6a}\label{classEtudiant_a032864b3a3159d82f695c9a10888de6a} 
+int {\bfseries get\+Idclass} () const
+\item 
+\Hypertarget{classEtudiant_a9a8ef5889c0bfee87cfdabbf24816b22}\label{classEtudiant_a9a8ef5889c0bfee87cfdabbf24816b22} 
+std\+::string {\bfseries get\+Appr\+Note} (const unsigned int \&idN) const
+\item 
+\Hypertarget{classEtudiant_a5e6fac7189d8a29b130debc18db8457d}\label{classEtudiant_a5e6fac7189d8a29b130debc18db8457d} 
+void {\bfseries addnote} (const \mbox{\hyperlink{classNote}{Note}} \&n)
+\item 
+\Hypertarget{classEtudiant_afa00a3ba34f787ad3e4351bbb2f83a2a}\label{classEtudiant_afa00a3ba34f787ad3e4351bbb2f83a2a} 
+bool {\bfseries modifiernote} (const unsigned int n\+Idn, const float nv\+Valeur)
+\item 
+\Hypertarget{classEtudiant_aff744fecf0acf9dd956acca711f16729}\label{classEtudiant_aff744fecf0acf9dd956acca711f16729} 
+void {\bfseries add\+Absence} (const \mbox{\hyperlink{classAbsence}{Absence}} \&absence)
+\item 
+\Hypertarget{classEtudiant_a9969dc6d85625e4c6b0fb5b91c3e3660}\label{classEtudiant_a9969dc6d85625e4c6b0fb5b91c3e3660} 
+void {\bfseries set\+Class} (\mbox{\hyperlink{classClassEtu}{Class\+Etu}} \texorpdfstring{$\ast$}{*}classetu)
+\item 
+\Hypertarget{classEtudiant_a483e1c1c6c0183b6305697cc0dbe04b3}\label{classEtudiant_a483e1c1c6c0183b6305697cc0dbe04b3} 
+void {\bfseries changer\+MDP} (const std\+::string \&nouvellemdp)
+\item 
+\Hypertarget{classEtudiant_a6503eb1a4346122c0e8229d24840d84c}\label{classEtudiant_a6503eb1a4346122c0e8229d24840d84c} 
+void {\bfseries charger\+Depuis\+Database} (\mbox{\hyperlink{classDatabase}{Database}} \&db)
+\item 
+\Hypertarget{classEtudiant_a33e07314f76bf21b596cd607eec933f3}\label{classEtudiant_a33e07314f76bf21b596cd607eec933f3} 
+float {\bfseries calculer\+Moyenne} (\mbox{\hyperlink{classDatabase}{Database}} \&db, int matiere\+Id) const
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/Etudiant.\+h\item 
+src/Etudiant.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,6 @@
+<RCC>
+  <qresource prefix="/Kalanso/">
+    <file alias="qt/Main.qml">/home/sami-guirguis/kalanso/qt/Main.qml</file>
+  </qresource>
+</RCC>
+

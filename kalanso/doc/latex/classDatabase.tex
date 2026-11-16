@@ -1,0 +1,149 @@
+\doxysection{Database Class Reference}
+\hypertarget{classDatabase}{}\label{classDatabase}\index{Database@{Database}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classDatabase_a6a73637867ee3a2fc733ba13ad8ff7c2}\label{classDatabase_a6a73637867ee3a2fc733ba13ad8ff7c2} 
+void {\bfseries init} ()
+\item 
+\Hypertarget{classDatabase_ab89cb07242f0ab1d4058974bf3e7cf19}\label{classDatabase_ab89cb07242f0ab1d4058974bf3e7cf19} 
+void {\bfseries close} ()
+\item 
+\Hypertarget{classDatabase_a0edf33fa4a5b052c3f15cf65fa0e83a3}\label{classDatabase_a0edf33fa4a5b052c3f15cf65fa0e83a3} 
+\mbox{\hyperlink{structPersonneDB}{Personne\+DB}} {\bfseries authentifier} (const std\+::string \&identifiant, const std\+::string \&mdp)
+\item 
+\Hypertarget{classDatabase_a52ffa18a792e41036ced656f5918dc5e}\label{classDatabase_a52ffa18a792e41036ced656f5918dc5e} 
+int {\bfseries creer\+Etudiant} (const std\+::string \&nom, const std\+::string \&prenom, const std\+::string \&mdp)
+\item 
+\Hypertarget{classDatabase_a4634dee081f4b4cc5c88cbd8cbaba0e2}\label{classDatabase_a4634dee081f4b4cc5c88cbd8cbaba0e2} 
+int {\bfseries creer\+Professeur} (const std\+::string \&nom, const std\+::string \&prenom, const std\+::string \&mdp)
+\item 
+\Hypertarget{classDatabase_aaf8d4a0a1667ca3d0a2fd3776ae99a1f}\label{classDatabase_aaf8d4a0a1667ca3d0a2fd3776ae99a1f} 
+int {\bfseries creer\+Admin} (const std\+::string \&nom, const std\+::string \&prenom, const std\+::string \&mdp)
+\item 
+\Hypertarget{classDatabase_a2ffbaedee6d1e0683eea20c7806549d6}\label{classDatabase_a2ffbaedee6d1e0683eea20c7806549d6} 
+void {\bfseries supprimer\+Compte} (int personne\+Id)
+\item 
+\Hypertarget{classDatabase_a354ef5796c9dd1f7093fafa8e1612c50}\label{classDatabase_a354ef5796c9dd1f7093fafa8e1612c50} 
+std\+::vector$<$ \mbox{\hyperlink{structPersonneDB}{Personne\+DB}} $>$ {\bfseries get\+Tous\+Etudiants} ()
+\item 
+\Hypertarget{classDatabase_abde242587bf67de5e51b7ac5650981fb}\label{classDatabase_abde242587bf67de5e51b7ac5650981fb} 
+std\+::vector$<$ \mbox{\hyperlink{structPersonneDB}{Personne\+DB}} $>$ {\bfseries get\+Tous\+Professeurs} ()
+\item 
+\Hypertarget{classDatabase_a86dbe1269992b0c88b8a5a23b2b11d93}\label{classDatabase_a86dbe1269992b0c88b8a5a23b2b11d93} 
+std\+::vector$<$ \mbox{\hyperlink{structPersonneDB}{Personne\+DB}} $>$ {\bfseries get\+Tous\+Utilisateurs} ()
+\item 
+\Hypertarget{classDatabase_a52bab458c426dd1be625db96ac5ced73}\label{classDatabase_a52bab458c426dd1be625db96ac5ced73} 
+\mbox{\hyperlink{structPersonneDB}{Personne\+DB}} {\bfseries get\+Personne\+Par\+Id} (int personne\+Id)
+\item 
+\Hypertarget{classDatabase_a5cb36d2e331fc79df44f49a5d950bb17}\label{classDatabase_a5cb36d2e331fc79df44f49a5d950bb17} 
+bool {\bfseries modifier\+Photo\+Profil} (int personne\+Id, const std\+::string \&photo\+Path)
+\item 
+\Hypertarget{classDatabase_ab3f9b59d31020d21975b08037a173791}\label{classDatabase_ab3f9b59d31020d21975b08037a173791} 
+bool {\bfseries assigner\+Etudiant\+Classe} (int etudiant\+Id, int classe\+Id)
+\item 
+\Hypertarget{classDatabase_a66ff4e7ab02d41bce17bec428ac179d1}\label{classDatabase_a66ff4e7ab02d41bce17bec428ac179d1} 
+int {\bfseries get\+Personne\+Id\+Par\+Identifiant} (const std\+::string \&identifiant)
+\item 
+\Hypertarget{classDatabase_ac2d5346992962ec7bd060b5e94fd9d59}\label{classDatabase_ac2d5346992962ec7bd060b5e94fd9d59} 
+std\+::string {\bfseries get\+Identifiant\+Par\+Id} (int personne\+Id)
+\item 
+\Hypertarget{classDatabase_a2d82bc053f6d79c68cea2d008ad4c82b}\label{classDatabase_a2d82bc053f6d79c68cea2d008ad4c82b} 
+bool {\bfseries modifier\+Mot\+De\+Passe} (int personne\+Id, const std\+::string \&nouveau\+Mdp)
+\item 
+\Hypertarget{classDatabase_ada028331a7b2d9d8a3271648c50dbaef}\label{classDatabase_ada028331a7b2d9d8a3271648c50dbaef} 
+void {\bfseries ajouter\+Note} (int etudiant\+Id, int matiere\+Id, float valeur, float coef, const std\+::string \&appreciation)
+\item 
+\Hypertarget{classDatabase_aea757aa27d3105069fda78cd1d8b9390}\label{classDatabase_aea757aa27d3105069fda78cd1d8b9390} 
+void {\bfseries modifier\+Note} (int note\+Id, float nouvelle\+Valeur)
+\item 
+\Hypertarget{classDatabase_a6316ca5d4f9e8997ff0699571c0ab6c7}\label{classDatabase_a6316ca5d4f9e8997ff0699571c0ab6c7} 
+void {\bfseries supprimer\+Note} (int note\+Id)
+\item 
+\Hypertarget{classDatabase_ace1771210f59122f7b55dc59277130a8}\label{classDatabase_ace1771210f59122f7b55dc59277130a8} 
+std\+::vector$<$ \mbox{\hyperlink{structNoteDB}{Note\+DB}} $>$ {\bfseries get\+Notes} (int etudiant\+Id)
+\item 
+\Hypertarget{classDatabase_afdfb866c94edf51ab02d28116a42ea0b}\label{classDatabase_afdfb866c94edf51ab02d28116a42ea0b} 
+std\+::vector$<$ \mbox{\hyperlink{structNoteDB}{Note\+DB}} $>$ {\bfseries get\+Notes\+By\+Matiere} (int etudiant\+Id, int matiere\+Id)
+\item 
+\Hypertarget{classDatabase_a9cb4b8e9d9c2af1602c5694ceed958f2}\label{classDatabase_a9cb4b8e9d9c2af1602c5694ceed958f2} 
+float {\bfseries get\+Moyenne} (int etudiant\+Id, int matiere\+Id)
+\item 
+\Hypertarget{classDatabase_a5f0fb9bb6db1f545daab0821e50ea9ef}\label{classDatabase_a5f0fb9bb6db1f545daab0821e50ea9ef} 
+void {\bfseries ajouter\+Absence} (int etudiant\+Id, const std\+::string \&date, const std\+::string \&heure, const std\+::string \&motif, bool justifie)
+\item 
+\Hypertarget{classDatabase_aef65a266f5dc86bf6ace3d6b9379b982}\label{classDatabase_aef65a266f5dc86bf6ace3d6b9379b982} 
+std\+::vector$<$ \mbox{\hyperlink{structAbsenceDB}{Absence\+DB}} $>$ {\bfseries get\+Absences} (int etudiant\+Id)
+\item 
+\Hypertarget{classDatabase_a786d8387cc28fe9320d004c305a101d4}\label{classDatabase_a786d8387cc28fe9320d004c305a101d4} 
+int {\bfseries get\+Nb\+Absences} (int etudiant\+Id)
+\item 
+\Hypertarget{classDatabase_a4ca64e1d372be632f45be8d6ad17a0e9}\label{classDatabase_a4ca64e1d372be632f45be8d6ad17a0e9} 
+int {\bfseries ajouter\+Matiere} (const std\+::string \&nom, const std\+::string \&apogee, float coef)
+\item 
+\Hypertarget{classDatabase_a291026b63277a990e5c978a29cc9e76d}\label{classDatabase_a291026b63277a990e5c978a29cc9e76d} 
+int {\bfseries ajouter\+Classe} (const std\+::string \&nom, const std\+::string \&niveau, const std\+::string \&voie)
+\item 
+\Hypertarget{classDatabase_aa1f1fb4a5d32e32a401214bcb9e16f2e}\label{classDatabase_aa1f1fb4a5d32e32a401214bcb9e16f2e} 
+std\+::vector$<$ \mbox{\hyperlink{structClasseDB}{Classe\+DB}} $>$ {\bfseries get\+Toutes\+Les\+Classes} ()
+\item 
+\Hypertarget{classDatabase_aa3780ebb0f7073650fbc8ff77ca98f60}\label{classDatabase_aa3780ebb0f7073650fbc8ff77ca98f60} 
+std\+::vector$<$ \mbox{\hyperlink{structMatiereDB}{Matiere\+DB}} $>$ {\bfseries get\+Toutes\+Lesmatieres} ()
+\item 
+\Hypertarget{classDatabase_a1c5931a0365a2ec9f968155fa5d11dce}\label{classDatabase_a1c5931a0365a2ec9f968155fa5d11dce} 
+std\+::vector$<$ \mbox{\hyperlink{structMatiereDB}{Matiere\+DB}} $>$ {\bfseries get\+Matieres\+Professeur} (int prof\+Id)
+\item 
+\Hypertarget{classDatabase_a8cac33a5fe0f6aa9e37c62251a0d66a6}\label{classDatabase_a8cac33a5fe0f6aa9e37c62251a0d66a6} 
+std\+::vector$<$ \mbox{\hyperlink{structMatiereDB}{Matiere\+DB}} $>$ {\bfseries get\+Matieres\+Etudiant} (int etudiant\+Id)
+\item 
+\Hypertarget{classDatabase_afb3ed8873226ddab3e4267493acfb6e7}\label{classDatabase_afb3ed8873226ddab3e4267493acfb6e7} 
+std\+::vector$<$ \mbox{\hyperlink{structPersonneDB}{Personne\+DB}} $>$ {\bfseries get\+Etudiants\+Par\+Matiere} (int matiere\+Id)
+\item 
+\Hypertarget{classDatabase_ae0a4bed7f4692f66ebd48c81f01bbfb2}\label{classDatabase_ae0a4bed7f4692f66ebd48c81f01bbfb2} 
+std\+::vector$<$ \mbox{\hyperlink{structPersonneDB}{Personne\+DB}} $>$ {\bfseries get\+Etudiants\+Classe} (int classe\+Id)
+\item 
+\Hypertarget{classDatabase_acde9a0e911ff677057815565bbe8504d}\label{classDatabase_acde9a0e911ff677057815565bbe8504d} 
+std\+::vector$<$ \mbox{\hyperlink{structClasseMatiereDB}{Classe\+Matiere\+DB}} $>$ {\bfseries get\+Matieres\+Classe} (int classe\+Id)
+\item 
+\Hypertarget{classDatabase_a2e2aa9c2a644386a73701d0fd168d9ae}\label{classDatabase_a2e2aa9c2a644386a73701d0fd168d9ae} 
+void {\bfseries assigner\+Prof\+Matiere} (int prof\+Id, int matiere\+Id)
+\item 
+\Hypertarget{classDatabase_aa84f1f577617e569b0c8e4002a6dc43d}\label{classDatabase_aa84f1f577617e569b0c8e4002a6dc43d} 
+bool {\bfseries affecter\+Matiere\+Classe} (int classe\+Id, int matiere\+Id, int prof\+Id, bool obligatoire)
+\item 
+\Hypertarget{classDatabase_a928619225b4d6e0485ece15ebe52df95}\label{classDatabase_a928619225b4d6e0485ece15ebe52df95} 
+void {\bfseries inscrire\+Etudiant\+Matiere} (int etudiant\+Id, int matiere\+Id)
+\item 
+\Hypertarget{classDatabase_adaf981224c9efc5f10384df7f78fd4e9}\label{classDatabase_adaf981224c9efc5f10384df7f78fd4e9} 
+int {\bfseries ajouter\+Cours} (const std\+::string \&jour, const std\+::string \&heure\+Debut, const std\+::string \&heure\+Fin, const std\+::string \&salle, int classe\+Id, int matiere\+Id, int prof\+Id)
+\item 
+\Hypertarget{classDatabase_aa34bebac492f6c6814f5115a0e6b26f0}\label{classDatabase_aa34bebac492f6c6814f5115a0e6b26f0} 
+void {\bfseries modifier\+Cours} (int cours\+Id, const std\+::string \&jour, const std\+::string \&heure\+Debut, const std\+::string \&heure\+Fin, const std\+::string \&salle)
+\item 
+\Hypertarget{classDatabase_a2442013e09e4804776171fc7d2d237d7}\label{classDatabase_a2442013e09e4804776171fc7d2d237d7} 
+void {\bfseries supprimer\+Cours} (int cours\+Id)
+\item 
+\Hypertarget{classDatabase_af7eaac6cc0f07a28f7e2a038168a8881}\label{classDatabase_af7eaac6cc0f07a28f7e2a038168a8881} 
+std\+::vector$<$ \mbox{\hyperlink{structCoursDB}{Cours\+DB}} $>$ {\bfseries get\+EDTEtudiant} (int etudiant\+Id)
+\item 
+\Hypertarget{classDatabase_acc6e2c45a948e9d87269e2147c48a906}\label{classDatabase_acc6e2c45a948e9d87269e2147c48a906} 
+std\+::vector$<$ \mbox{\hyperlink{structCoursDB}{Cours\+DB}} $>$ {\bfseries get\+EDTProfesseur} (int prof\+Id)
+\item 
+\Hypertarget{classDatabase_abb7b6e131c840cf0bdc32c1a64225884}\label{classDatabase_abb7b6e131c840cf0bdc32c1a64225884} 
+std\+::vector$<$ \mbox{\hyperlink{structCoursDB}{Cours\+DB}} $>$ {\bfseries get\+Tout\+EDT} ()
+\item 
+\Hypertarget{classDatabase_aaf41b59359531c1b05103d7a43e728e0}\label{classDatabase_aaf41b59359531c1b05103d7a43e728e0} 
+int {\bfseries publier\+Actualite} (const std\+::string \&titre, const std\+::string \&contenu, const std\+::string \&date\+Publication)
+\item 
+\Hypertarget{classDatabase_a3d4a8c44e44c894566ea1dbbef08fe90}\label{classDatabase_a3d4a8c44e44c894566ea1dbbef08fe90} 
+std\+::vector$<$ \mbox{\hyperlink{structActualiteDB}{Actualite\+DB}} $>$ {\bfseries get\+Toutes\+Actualites} ()
+\item 
+\Hypertarget{classDatabase_a21139149cb6a8b731596714eb75935bb}\label{classDatabase_a21139149cb6a8b731596714eb75935bb} 
+void {\bfseries supprimer\+Actualite} (int actualite\+Id)
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/Database.\+h\item 
+src/Database.\+cpp\end{DoxyCompactItemize}

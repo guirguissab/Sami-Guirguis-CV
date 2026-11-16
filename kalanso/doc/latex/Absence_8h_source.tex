@@ -1,0 +1,52 @@
+\doxysection{Absence.\+h}
+\hypertarget{Absence_8h_source}{}\label{Absence_8h_source}\index{src/Absence.h@{src/Absence.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ ABSENCE\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ ABSENCE\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}Date.h"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}Heure.h"{}}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classAbsence}{Absence}}\{}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ idAb;\ \ }
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classDate}{Date}}\ Dateabsc;\ \ \ \ \ \ }
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classHeure}{Heure}}\ heureAbsc;\ \ \ \ }
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ std::string\ motif;\ \ }
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ justif;\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classAbsence_aa16e99e34379623c78002d96fcd8bb36}{Absence}}();}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classAbsence_a43e8b26211cc9b21b04a10e218993947}{\string~Absence}}();}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classDate}{Date}}\&\ \mbox{\hyperlink{classAbsence_a510e672ec99d3b7d3b29aa2c2083b6b0}{getDate}}();}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{classAbsence_ad7a7e54941584a2bd9fd2e66eab37c93}{getMotif}}();}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\&\ \mbox{\hyperlink{classAbsence_a642c1fa0244c9a2248ffcad52283045b}{getJustif}}();}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classHeure}{Heure}}\&\ \mbox{\hyperlink{classAbsence_ae5d51e8be8d0818a6c2cf4cf896447d7}{getHeure}}();}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\&\ \mbox{\hyperlink{classAbsence_a496d1ce082b34683e561aee4394e8eac}{getId}}();}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classAbsence_a8fda68e407b222047353489280d41951}{setAbsc}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ nIda\ ,\textcolor{keyword}{const}\ \mbox{\hyperlink{classDate}{Date}}\ d,\textcolor{keyword}{const}\ \mbox{\hyperlink{classHeure}{Heure}}\ he,\textcolor{keyword}{const}\ std::string\ mot,\textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ j);}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classAbsence_a40e23cd50038cf66da6c3d0139c959a7}{setHeure}}\ (\textcolor{keyword}{const}\ \mbox{\hyperlink{classHeure}{Heure}}\ he);}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classAbsence_a5b78af5e61dd84881123011d90425789}{setMotif}}(\textcolor{keyword}{const}\ std::string\ mot);}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classAbsence_abe7c94dc2110b7b1c04a9f7a73c8aea8}{setDate}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classDate}{Date}}\ d);}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classAbsence_ac4d91eaf09dbc9e644dd0e34453b1eae}{setJustif}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ j);}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classAbsence_aed224597a80921388a385b6e0bb06a8d}{setId}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ nIda);}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ \};}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

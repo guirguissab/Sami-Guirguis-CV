@@ -1,0 +1,897 @@
+{
+    "classes": [
+        {
+            "className": "SchoolFacade",
+            "methods": [
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "login",
+                            "type": "QString"
+                        },
+                        {
+                            "name": "password",
+                            "type": "QString"
+                        }
+                    ],
+                    "name": "login",
+                    "returnType": "bool"
+                },
+                {
+                    "access": "public",
+                    "name": "logout",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "name": "getNotesLines",
+                    "returnType": "QStringList"
+                },
+                {
+                    "access": "public",
+                    "name": "getUsersLines",
+                    "returnType": "QStringList"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "roleName",
+                            "type": "QString"
+                        }
+                    ],
+                    "name": "getUsersByRole",
+                    "returnType": "QStringList"
+                },
+                {
+                    "access": "public",
+                    "name": "canManageNotes",
+                    "returnType": "bool"
+                },
+                {
+                    "access": "public",
+                    "name": "canManageUsers",
+                    "returnType": "bool"
+                },
+                {
+                    "access": "public",
+                    "name": "isStudent",
+                    "returnType": "bool"
+                },
+                {
+                    "access": "public",
+                    "name": "isProfesseur",
+                    "returnType": "bool"
+                },
+                {
+                    "access": "public",
+                    "name": "isAdmin",
+                    "returnType": "bool"
+                },
+                {
+                    "access": "public",
+                    "name": "getMyClasses",
+                    "returnType": "QStringList"
+                },
+                {
+                    "access": "public",
+                    "name": "getMyEDT",
+                    "returnType": "QStringList"
+                },
+                {
+                    "access": "public",
+                    "name": "getMyNotes",
+                    "returnType": "QStringList"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "noteId",
+                            "type": "int"
+                        },
+                        {
+                            "name": "valeur",
+                            "type": "double"
+                        }
+                    ],
+                    "name": "modifyNote",
+                    "returnType": "bool"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "noteId",
+                            "type": "int"
+                        }
+                    ],
+                    "name": "deleteNote",
+                    "returnType": "bool"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "nom",
+                            "type": "QString"
+                        },
+                        {
+                            "name": "prenom",
+                            "type": "QString"
+                        },
+                        {
+                            "name": "mdp",
+                            "type": "QString"
+                        },
+                        {
+                            "name": "roleChoisi",
+                            "type": "int"
+                        }
+                    ],
+                    "name": "createUser",
+                    "returnType": "bool"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "userId",
+                            "type": "int"
+                        }
+                    ],
+                    "name": "deleteUser",
+                    "returnType": "bool"
+                },
+                {
+                    "access": "public",
+                    "name": "refreshData",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "userId",
+                            "type": "int"
+                        },
+                        {
+                            "name": "newPassword",
+                            "type": "QString"
+                        }
+                    ],
+                    "name": "changePassword",
+                    "returnType": "bool"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "userId",
+                            "type": "int"
+                        },
+                        {
+                            "name": "photoPath",
+                            "type": "QString"
+                        }
+                    ],
+                    "name": "setPhotoPath",
+                    "returnType": "bool"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "etudiantId",
+                            "type": "int"
+                        },
+                        {
+                            "name": "classeId",
+                            "type": "int"
+                        }
+                    ],
+                    "name": "assignStudentToClass",
+                    "returnType": "bool"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "profId",
+                            "type": "int"
+                        },
+                        {
+                            "name": "classeId",
+                            "type": "int"
+                        }
+                    ],
+                    "name": "assignProfToClass",
+                    "returnType": "bool"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "profId",
+                            "type": "int"
+                        },
+                        {
+                            "name": "classeId",
+                            "type": "int"
+                        },
+                        {
+                            "name": "matiereId",
+                            "type": "int"
+                        },
+                        {
+                            "name": "jour",
+                            "type": "QString"
+                        },
+                        {
+                            "name": "heureDebut",
+                            "type": "QString"
+                        },
+                        {
+                            "name": "heureFin",
+                            "type": "QString"
+                        },
+                        {
+                            "name": "salle",
+                            "type": "QString"
+                        }
+                    ],
+                    "name": "assignEDTToProf",
+                    "returnType": "bool"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "etudiantId",
+                            "type": "int"
+                        },
+                        {
+                            "name": "classeId",
+                            "type": "int"
+                        }
+                    ],
+                    "name": "assignEDTToStudent",
+                    "returnType": "bool"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "etudiantId",
+                            "type": "int"
+                        },
+                        {
+                            "name": "matiereId",
+                            "type": "int"
+                        },
+                        {
+                            "name": "valeur",
+                            "type": "double"
+                        },
+                        {
+                            "name": "coef",
+                            "type": "double"
+                        },
+                        {
+                            "name": "appreciation",
+                            "type": "QString"
+                        }
+                    ],
+                    "name": "addNote",
+                    "returnType": "bool"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "classeId",
+                            "type": "int"
+                        },
+                        {
+                            "name": "etudiantId",
+                            "type": "int"
+                        },
+                        {
+                            "name": "matiereId",
+                            "type": "int"
+                        },
+                        {
+                            "name": "valeur",
+                            "type": "double"
+                        },
+                        {
+                            "name": "coef",
+                            "type": "double"
+                        },
+                        {
+                            "name": "appreciation",
+                            "type": "QString"
+                        }
+                    ],
+                    "name": "addNoteEtu",
+                    "returnType": "bool"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "etudiantId",
+                            "type": "int"
+                        }
+                    ],
+                    "name": "getNotesByStudent",
+                    "returnType": "QStringList"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "etudiantId",
+                            "type": "int"
+                        },
+                        {
+                            "name": "matiereId",
+                            "type": "int"
+                        }
+                    ],
+                    "name": "getNotesBySubject",
+                    "returnType": "QStringList"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "etudiantId",
+                            "type": "int"
+                        },
+                        {
+                            "name": "matiereId",
+                            "type": "int"
+                        }
+                    ],
+                    "name": "getMoyenne",
+                    "returnType": "double"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "etudiantId",
+                            "type": "int"
+                        },
+                        {
+                            "name": "date",
+                            "type": "QString"
+                        },
+                        {
+                            "name": "heure",
+                            "type": "QString"
+                        },
+                        {
+                            "name": "motif",
+                            "type": "QString"
+                        },
+                        {
+                            "name": "justifie",
+                            "type": "bool"
+                        }
+                    ],
+                    "name": "addAbsence",
+                    "returnType": "bool"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "absenceId",
+                            "type": "int"
+                        },
+                        {
+                            "name": "justifie",
+                            "type": "bool"
+                        },
+                        {
+                            "name": "motif",
+                            "type": "QString"
+                        }
+                    ],
+                    "name": "updateAbsence",
+                    "returnType": "bool"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "etudiantId",
+                            "type": "int"
+                        }
+                    ],
+                    "name": "getAbsencesByStudent",
+                    "returnType": "QStringList"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "etudiantId",
+                            "type": "int"
+                        }
+                    ],
+                    "name": "getAbsenceCount",
+                    "returnType": "int"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "nom",
+                            "type": "QString"
+                        },
+                        {
+                            "name": "apogee",
+                            "type": "QString"
+                        },
+                        {
+                            "name": "coef",
+                            "type": "double"
+                        }
+                    ],
+                    "name": "addMatiere",
+                    "returnType": "bool"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "nom",
+                            "type": "QString"
+                        },
+                        {
+                            "name": "niveau",
+                            "type": "QString"
+                        },
+                        {
+                            "name": "voie",
+                            "type": "QString"
+                        }
+                    ],
+                    "name": "addClasse",
+                    "returnType": "bool"
+                },
+                {
+                    "access": "public",
+                    "name": "getAllClasses",
+                    "returnType": "QStringList"
+                },
+                {
+                    "access": "public",
+                    "name": "getAllMatieres",
+                    "returnType": "QStringList"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "profId",
+                            "type": "int"
+                        }
+                    ],
+                    "name": "getMatieresProfesseur",
+                    "returnType": "QStringList"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "etudiantId",
+                            "type": "int"
+                        }
+                    ],
+                    "name": "getMatieresEtudiant",
+                    "returnType": "QStringList"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "matiereId",
+                            "type": "int"
+                        }
+                    ],
+                    "name": "getEtudiantsParMatiere",
+                    "returnType": "QStringList"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "classeId",
+                            "type": "int"
+                        }
+                    ],
+                    "name": "getEtudiantsParClasse",
+                    "returnType": "QStringList"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "classeId",
+                            "type": "int"
+                        }
+                    ],
+                    "name": "getMatieresClasse",
+                    "returnType": "QStringList"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "profId",
+                            "type": "int"
+                        },
+                        {
+                            "name": "matiereId",
+                            "type": "int"
+                        }
+                    ],
+                    "name": "assignProfMatiere",
+                    "returnType": "bool"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "classeId",
+                            "type": "int"
+                        },
+                        {
+                            "name": "matiereId",
+                            "type": "int"
+                        },
+                        {
+                            "name": "profId",
+                            "type": "int"
+                        },
+                        {
+                            "name": "obligatoire",
+                            "type": "bool"
+                        }
+                    ],
+                    "name": "affectMatiereClasse",
+                    "returnType": "bool"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "etudiantId",
+                            "type": "int"
+                        },
+                        {
+                            "name": "matiereId",
+                            "type": "int"
+                        }
+                    ],
+                    "name": "inscrireEtudiantMatiere",
+                    "returnType": "bool"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "jour",
+                            "type": "QString"
+                        },
+                        {
+                            "name": "heureDebut",
+                            "type": "QString"
+                        },
+                        {
+                            "name": "heureFin",
+                            "type": "QString"
+                        },
+                        {
+                            "name": "salle",
+                            "type": "QString"
+                        },
+                        {
+                            "name": "classeId",
+                            "type": "int"
+                        },
+                        {
+                            "name": "matiereId",
+                            "type": "int"
+                        },
+                        {
+                            "name": "profId",
+                            "type": "int"
+                        }
+                    ],
+                    "name": "addCours",
+                    "returnType": "bool"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "coursId",
+                            "type": "int"
+                        },
+                        {
+                            "name": "jour",
+                            "type": "QString"
+                        },
+                        {
+                            "name": "heureDebut",
+                            "type": "QString"
+                        },
+                        {
+                            "name": "heureFin",
+                            "type": "QString"
+                        },
+                        {
+                            "name": "salle",
+                            "type": "QString"
+                        }
+                    ],
+                    "name": "updateCours",
+                    "returnType": "bool"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "coursId",
+                            "type": "int"
+                        }
+                    ],
+                    "name": "deleteCours",
+                    "returnType": "bool"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "etudiantId",
+                            "type": "int"
+                        }
+                    ],
+                    "name": "getEDTEtudiant",
+                    "returnType": "QStringList"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "profId",
+                            "type": "int"
+                        }
+                    ],
+                    "name": "getEDTProfesseur",
+                    "returnType": "QStringList"
+                },
+                {
+                    "access": "public",
+                    "name": "getEDTGlobal",
+                    "returnType": "QStringList"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "titre",
+                            "type": "QString"
+                        },
+                        {
+                            "name": "contenu",
+                            "type": "QString"
+                        },
+                        {
+                            "name": "datePublication",
+                            "type": "QString"
+                        }
+                    ],
+                    "name": "publishActualite",
+                    "returnType": "bool"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "actualiteId",
+                            "type": "int"
+                        }
+                    ],
+                    "name": "deleteActualite",
+                    "returnType": "bool"
+                },
+                {
+                    "access": "public",
+                    "name": "getActualites",
+                    "returnType": "QStringList"
+                }
+            ],
+            "object": true,
+            "properties": [
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 0,
+                    "name": "logged",
+                    "notify": "loggedChanged",
+                    "read": "logged",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "bool",
+                    "user": false
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 1,
+                    "name": "role",
+                    "notify": "userChanged",
+                    "read": "role",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QString",
+                    "user": false
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 2,
+                    "name": "fullName",
+                    "notify": "userChanged",
+                    "read": "fullName",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QString",
+                    "user": false
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 3,
+                    "name": "identifiant",
+                    "notify": "userChanged",
+                    "read": "identifiant",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QString",
+                    "user": false
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 4,
+                    "name": "userId",
+                    "notify": "userChanged",
+                    "read": "userId",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "int",
+                    "user": false
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 5,
+                    "name": "student",
+                    "notify": "userChanged",
+                    "read": "isStudent",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "bool",
+                    "user": false
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 6,
+                    "name": "professeur",
+                    "notify": "userChanged",
+                    "read": "isProfesseur",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "bool",
+                    "user": false
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 7,
+                    "name": "admin",
+                    "notify": "userChanged",
+                    "read": "isAdmin",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "bool",
+                    "user": false
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 8,
+                    "name": "notesCount",
+                    "notify": "notesChanged",
+                    "read": "notesCount",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "int",
+                    "user": false
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 9,
+                    "name": "statusMessage",
+                    "notify": "statusMessageChanged",
+                    "read": "statusMessage",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QString",
+                    "user": false
+                }
+            ],
+            "qualifiedClassName": "SchoolFacade",
+            "signals": [
+                {
+                    "access": "public",
+                    "name": "loggedChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "name": "userChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "name": "notesChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "name": "statusMessageChanged",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QObject"
+                }
+            ]
+        }
+    ],
+    "inputFile": "SchoolFacade.h",
+    "outputRevision": 68
+}

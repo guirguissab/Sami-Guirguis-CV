@@ -1,0 +1,370 @@
+@startuml
+skinparam classAttributeIconSize 0
+hide empty methods
+hide empty fields
+
+package "Coeur du project" {
+  class Date {
+    - j : unsigned int
+    - m : unsigned int
+    - a : unsigned int
+    --
+    + Date()
+    + Date(jj : unsigned int, mm : unsigned int, aa : unsigned int)
+    + getjour() : unsigned int
+    + getmois() : unsigned int
+    + getanne() : unsigned int
+    + affichedate() : void
+    + testRegression() : void
+  }
+
+  class Heure {
+    - h : unsigned int
+    - minute : unsigned int
+    --
+    + Heure()
+    + Heure(h : unsigned int, minute : unsigned int)
+    + afficheHeure() : std::string
+    + testRegression() : void
+  }
+
+  class Matiere {
+    - idM : unsigned int
+    - nom : std::string
+    - apogee : std::string
+    - coef : int
+    --
+    + Matiere()
+    + Matiere(n : std::string, a : std::string, c : int, Id : unsigned int)
+    + getId() : unsigned int
+    + getnom() : std::string
+    + getapogee() : std::string
+    + setnometapogee(n : std::string, a : std::string) : void
+    + setcoef(c : int) : void
+    + testRegression() : void
+  }
+
+  class Note {
+    - idN : unsigned int
+    - Valeur : float
+    - Coef : float
+    - Appreciation : std::string
+    - mat : Matiere
+    --
+    + Note()
+    + Note(val : float, cf : float, Appr : std::string, m : Matiere, IdN : unsigned int)
+    + getValeur() : float
+    + getcoef() : float
+    + getId() : unsigned int
+    + getAppr() : std::string
+    + setValeur(val : float) : void
+    + setCoef(nCoef : float) : void
+    + setApprec(Appr : std::string) : void
+    + setNote(val : float, cf : float, Appr : std::string, m : Matiere, Id : unsigned int) : void
+  }
+
+  class Absence {
+    - idAb : unsigned int
+    - Dateabsc : Date
+    - heureAbsc : Heure
+    - motif : std::string
+    - justif : bool
+    --
+    + Absence()
+    + getDate() : Date
+    + getMotif() : std::string
+    + getJustif() : bool
+    + getHeure() : Heure
+    + getId() : unsigned int
+    + setAbsc(nIda : unsigned int, d : Date, he : Heure, mot : std::string, j : bool) : void
+    + setHeure(he : Heure) : void
+    + setMotif(mot : std::string) : void
+    + setDate(d : Date) : void
+    + setJustif(j : bool) : void
+    + setId(nIda : unsigned int) : void
+  }
+
+  class Personne {
+    - idP : unsigned int
+    - nom : std::string
+    - prenom : std::string
+    - mdp : std::string
+    - date_Naiss : Date
+    --
+    + Personne()
+    + Personne(ID : unsigned int, nm : std::string, pr : std::string, mp : std::string, d : Date)
+    + getNom() : std::string
+    + getPrenom() : std::string
+    + verifierMDP(MDP : std::string) : bool
+    + getId() : unsigned int
+    + modifierMDP(nMDP : std::string) : void
+  }
+
+  class cour {
+    - idC : unsigned int
+    - jour : std::string
+    - salle : std::string
+    - debut : Heure
+    - fin : Heure
+    --
+    + mat : Matiere
+    --
+    + cour()
+    + cour(j : std::string, s : std::string, d : Heure, f : Heure, m : Matiere, Id : unsigned int)
+    + getJour() : std::string
+    + getSalle() : std::string
+    + getId() : unsigned int
+    + getdebut() : Heure
+    + getfin() : Heure
+  }
+
+  class EDT {
+    - ListeCour : std::vector<cour>
+    --
+    + EDT()
+    + getCours() : std::vector<cour>
+    + ajouterCours(cours : cour) : void
+    + supprimerCours(nidC : unsigned int) : bool
+    + modifierCours(cours : cour) : bool
+    + getSize() : int
+  }
+}
+
+package "Class acteur" {
+  class Etudiant {
+    - p : Personne
+    - Notes : std::vector<Note>
+    - ab : std::vector<Absence>
+    - Classactu : ClassEtu*
+    --
+    + Etudiant()
+    + Etudiant(pe : Personne, Cl : ClassEtu*)
+    + getProfil() : Personne
+    + getId() : unsigned int
+    + getEDT() : EDT
+    + getNote() : std::vector<Note>
+    + getAbsence() : std::vector<Absence>
+    + getMatieres() : std::vector<Matiere>
+    + getClass() : ClassEtu
+    + addnote(n : Note) : void
+    + modifiernote(nIdn : unsigned int, nvValeur : float) : bool
+    + addAbsence(absence : Absence) : void
+    + setClass(classetu : ClassEtu*) : void
+    + changerMDP(nouvellemdp : std::string) : void
+    + chargerDepuisDatabase(bd : Database) : void
+    + calculerMoyenne(bd : Database, matiereId : int) : float
+  }
+
+  class ClassEtu {
+    - idCE : unsigned int
+    - numerDeClasse : int
+    - niveau : std::string
+    - voie : std::string
+    - ListeMat : std::vector<Matiere>
+    - edt : EDT
+    - ListEtu : std::vector<Etudiant>
+    --
+    + ClassEtu()
+    + ClassEtu(id : unsigned int, numclass : int, niv : std::string, voi : std::string)
+    + getId() : unsigned int
+    + getMatieres() : std::vector<Matiere>
+    + getedt() : EDT
+    + getListEtu() : std::vector<Etudiant>
+    + getEtu(IdE : unsigned int) : Etudiant*
+    + addEtu(Etu : Etudiant) : void
+    + addMatiere(mat : Matiere) : void
+    + addNoteEtu(IdE : unsigned int, n : Note) : bool
+    + modifNoteEtu(IdE : unsigned int, n : Note) : bool
+    + addAbsenceEtu(IdE : unsigned int, ab : Absence) : bool
+    + chargerDepuisDatabase(bd : Database) : void
+  }
+
+  class Professeur {
+    - p : Personne
+    - matieresEnseignees : std::vector<Matiere>
+    - classesEnseignees : std::vector<ClassEtu>
+    - edt : EDT
+    --
+    + Professeur()
+    + Professeur(pe : Personne)
+    + getProfil() : Personne
+    + getMatieresEnseignees() : std::vector<Matiere>
+    + getClassesEnseignees() : std::vector<ClassEtu>
+    + consulterEDT() : EDT
+    + addMatiere(mat : Matiere) : void
+    + setEDT(nEDT : EDT) : void
+    + addClass(cla : ClassEtu) : void
+    + addNoteEtu(idCE : unsigned int, idE : unsigned int, note : Note) : bool
+    + modifierNote(idCE : unsigned int, idE : unsigned int, note : Note) : bool
+    + addAbsenceEtu(idCE : unsigned int, idE : unsigned int, ab : Absence) : bool
+    + chargerDepuisDatabase(bd : Database) : void
+    + saisirNote(bd : Database, etudiantId : unsigned int, matiereId : unsigned int, valeur : float, coef : float, appreciation : std::string) : void
+  }
+
+  class Administrateur {
+    - p : Personne
+    --
+    + Administrateur()
+    + Administrateur(profil : Personne)
+    + getProfil() : Personne
+    + creerCompteEtudiant(...) : Etudiant
+    + creerCompteProfesseur(...) : Professeur
+    + creerCompteAdmin(...) : Administrateur
+    + creerMatiere(id : unsigned int, nom : std::string, apogee : std::string, coef : float) : Matiere
+    + creerClass(id : unsigned int, numclass : int, niv : std::string, voi : std::string) : ClassEtu
+    + assignerEtudiantClasse(bd : Database, etudiantId : int, classeId : int) : bool
+    + assignerProfClasse(bd : Database, profId : int, classeId : int) : bool
+    + affecterMatiereClasse(bd : Database, classeId : int, matiereId : int, profId : int, obligatoire : bool) : bool
+    + synchroniserBD(bd : Database) : void
+  }
+
+  class Actualite {
+    - idA : unsigned int
+    - titre : std::string
+    - contenu : std::string
+    - datePublication : Date
+    --
+    + Actualite()
+    + Actualite(id : unsigned int, tit : std::string, cont : std::string, datepub : Date)
+    + getId() : unsigned int
+    + getTitre() : std::string
+    + getContenu() : std::string
+    + getDate() : Date
+    + setTitre(tit : std::string) : void
+    + setContenu(cont : std::string) : void
+    + setDate(datepub : Date) : void
+  }
+}
+
+package "Facade" {
+  class "BaseDeDonnees" as Database {
+    - db : sqlite3*
+    - execSQL(sql : std::string) : bool
+    - ensureOpen(contexte : std::string) : bool
+    - prepareStatement(sql : std::string, stmt : sqlite3_stmt**) : bool
+    - executeNonQuery(stmt : sqlite3_stmt*, contexte : std::string) : bool
+    - tableHasColumn(tableName : std::string, columnName : std::string) : bool
+    --
+    + init() : void
+    + close() : void
+    + authentifier(identifiant : std::string, mdp : std::string) : PersonneDB
+    + creerEtudiant(nom : std::string, prenom : std::string, mdp : std::string) : int
+    + creerProfesseur(nom : std::string, prenom : std::string, mdp : std::string) : int
+    + creerAdmin(nom : std::string, prenom : std::string, mdp : std::string) : int
+    + getTousUtilisateurs() : std::vector<PersonneDB>
+    + ajouterNote(etudiantId : int, matiereId : int, valeur : float, coef : float, appreciation : std::string) : void
+    + getNotes(etudiantId : int) : std::vector<NoteDB>
+    + ajouterAbsence(etudiantId : int, date : std::string, heure : std::string, motif : std::string, justifie : bool) : void
+    + getAbsences(etudiantId : int) : std::vector<AbsenceDB>
+    + ajouterClasse(nom : std::string, niveau : std::string, voie : std::string) : int
+    + ajouterMatiere(nom : std::string, apogee : std::string, coef : float) : int
+    + getToutesLesClasses() : std::vector<ClasseDB>
+    + getToutesLesmatieres() : std::vector<MatiereDB>
+    + getEDTEtudiant(etudiantId : int) : std::vector<CoursDB>
+    + getEDTProfesseur(profId : int) : std::vector<CoursDB>
+    + getToutEDT() : std::vector<CoursDB>
+    + publierActualite(titre : std::string, contenu : std::string, datePublication : std::string) : int
+    + getToutesActualites() : std::vector<ActualiteDB>
+  }
+
+  class "FacadeEcole" as SchoolFacade {
+    - m_bd : Database
+    - m_user : PersonneDB
+    - m_etudiant : Etudiant
+    - m_professeur : Professeur
+    - m_admin : Administrateur
+    - m_notesCount : int
+    - m_statusMessage : QString
+    --
+    + login(login : QString, password : QString) : bool
+    + logout() : void
+    + getNotesLines() : QStringList
+    + getUsersLines() : QStringList
+    + getMyClasses() : QStringList
+    + getMyEDT() : QStringList
+    + addNote(...) : bool
+    + addNoteEtu(...) : bool
+    + addAbsence(...) : bool
+    + addClasse(...) : bool
+    + addCours(...) : bool
+    + publishActualite(...) : bool
+    - refreshRoleObjects() : void
+    - refreshNotesCount() : void
+    - setStatusMessage(message : QString) : void
+  }
+
+  class "ContexteApplication" as Context <<struct>> {
+    + bd : Database
+    + currentUser : PersonneDB
+    + etudiantActif : Etudiant
+    + professeurActif : Professeur
+    + adminActif : Administrateur
+    + logged : bool
+    + running : bool
+    + chargerUtilisateurActif() : void
+  }
+
+  class "FenetreTexte" as WinTXT {
+    - dimx : int
+    - dimy : int
+    - win : char*
+    --
+    + WinTXT(dx : int, dy : int)
+    + clear(c : char) : void
+    + print(x : int, y : int, c : char) : void
+    + print(x : int, y : int, c : char*) : void
+    + draw(x : int, y : int) : void
+    + pause() : void
+    + getCh() : char
+  }
+}
+
+class "PersonneBD" as PersonneDB <<struct>>
+class "NoteBD" as NoteDB <<struct>>
+class "AbsenceBD" as AbsenceDB <<struct>>
+class "MatiereBD" as MatiereDB <<struct>>
+class "ClasseBD" as ClasseDB <<struct>>
+class "ClasseMatiereBD" as ClasseMatiereDB <<struct>>
+class "CoursBD" as CoursDB <<struct>>
+class "ActualiteBD" as ActualiteDB <<struct>>
+
+Personne --> Date
+Absence --> Date
+Absence --> Heure
+Note --> Matiere
+cour --> Heure
+cour --> Matiere
+EDT --> cour
+Etudiant --> Personne
+Etudiant --> Note
+Etudiant --> Absence
+Etudiant ..> ClassEtu : utilise Classactu
+ClassEtu --> Matiere
+ClassEtu --> EDT
+ClassEtu --> Etudiant
+Professeur --> Personne
+Professeur --> Matiere
+Professeur --> ClassEtu
+Professeur --> EDT
+Administrateur --> Personne
+Actualite --> Date
+
+Context --> Database
+Context --> Etudiant
+Context --> Professeur
+Context --> Administrateur
+SchoolFacade --> Database
+SchoolFacade --> Etudiant
+SchoolFacade --> Professeur
+SchoolFacade --> Administrateur
+SchoolFacade ..> PersonneDB : utilise
+Database ..> PersonneDB : utilise
+Database ..> NoteDB : utilise
+Database ..> AbsenceDB : utilise
+Database ..> MatiereDB : utilise
+Database ..> ClasseDB : utilise
+Database ..> ClasseMatiereDB : utilise
+Database ..> CoursDB : utilise
+Database ..> ActualiteDB : utilise
+
+@enduml

@@ -1,0 +1,63 @@
+\doxysection{Class\+Etu.\+h}
+\hypertarget{ClassEtu_8h_source}{}\label{ClassEtu_8h_source}\index{src/ClassEtu.h@{src/ClassEtu.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ CLASSETU\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ CLASSETU\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include"{}Matiere.h"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}EDT.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}Note.h"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include"{}Absence.h"{}}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include<iostream>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include<string>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include<vector>}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classEtudiant}{Etudiant}};}
+\DoxyCodeLine{00014\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classDatabase}{Database}};}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classClassEtu}{ClassEtu}}\{}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ idCE;}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ numerDeClasse;}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ std::string\ niveau;}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ std::string\ voie;}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ std::vector<Matiere>\ ListeMat;}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classEDT}{EDT}}\ edt;}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ std::vector<Etudiant>\ ListEtu;}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classClassEtu}{ClassEtu}}();}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classClassEtu}{ClassEtu}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id},\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ numclass,\textcolor{keyword}{const}\ std::string\ niv,\textcolor{keyword}{const}\ std::string\ voi);}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ getId()\ \textcolor{keyword}{const}\ ;}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ getnumClass()\textcolor{keyword}{const};}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ std::string\ getniveau()\textcolor{keyword}{const};}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ std::string\ getvoie()\textcolor{keyword}{const};}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ std::vector<Matiere>\ getMatieres()\textcolor{keyword}{const};}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classEDT}{EDT}}\ getedt()\textcolor{keyword}{const};}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ std::vector<Etudiant>\ getListEtu()\textcolor{keyword}{const};}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classEtudiant}{Etudiant}}*\ getEtu(\textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\&\ IdE);}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ addEtu(\textcolor{keyword}{const}\ \mbox{\hyperlink{classEtudiant}{Etudiant}}\&\ Etu);}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ addMatiere(\textcolor{keyword}{const}\ \mbox{\hyperlink{classMatiere}{Matiere}}\&\ mat);}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ addNoteEtu(\textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\&\ IdE,\textcolor{keyword}{const}\ \mbox{\hyperlink{classNote}{Note}}\&\ n);}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ modifNoteEtu(\textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\&\ IdE,\textcolor{keyword}{const}\ \mbox{\hyperlink{classNote}{Note}}\&\ n);}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ addAbsenceEtu(\textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\&\ IdE,\textcolor{keyword}{const}\ \mbox{\hyperlink{classAbsence}{Absence}}\&\ ab);}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ rmEtu(\textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ IdE);}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ setid(\textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ nId);}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ setnumclass(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ numclass);}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ setniveau(\textcolor{keyword}{const}\ std::string\ niv);}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ setvoie(\textcolor{keyword}{const}\ std::string\ voi);}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ addmat(\textcolor{keyword}{const}\ \mbox{\hyperlink{classMatiere}{Matiere}}\ mat);}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ setedt(\textcolor{keyword}{const}\ \mbox{\hyperlink{classEDT}{EDT}}\&\ nedt);}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ chargerDepuisDatabase(\mbox{\hyperlink{classDatabase}{Database}}\&\ db);\ \textcolor{comment}{//j'ai\ pas\ compris\ comment\ ca\ fonction\ dans\ le\ code,\ pardon}}
+\DoxyCodeLine{00053\ \};}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

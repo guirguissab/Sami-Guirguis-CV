@@ -1,0 +1,56 @@
+\doxysection{Professeur.\+h}
+\hypertarget{Professeur_8h_source}{}\label{Professeur_8h_source}\index{src/Professeur.h@{src/Professeur.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ \_PROFESSEUR\_H\_}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ \_PROFESSEUR\_H\_}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}Matiere.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}Etudiant.h"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}Note.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}Absence.h"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}EDT.h"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}ClassEtu.h"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include"{}Personne.h"{}}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classDatabase}{Database}};}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classProfesseur}{Professeur}}\{}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classPersonne}{Personne}}\ p;}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ std::vector<Matiere>\ matieresEnseignees;}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ std::vector<ClassEtu>\ classesEnseignees;}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classEDT}{EDT}}\ edt;}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classProfesseur}{Professeur}}();}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classProfesseur}{Professeur}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classPersonne}{Personne}}\ pe);}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classPersonne}{Personne}}\&\ getProfil()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<Matiere>\&\ getMatieresEnseignees()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<ClassEtu>\&\ getClassesEnseignees()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classEDT}{EDT}}\&\ consulterEDT()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ addMatiere(\textcolor{keyword}{const}\ \mbox{\hyperlink{classMatiere}{Matiere}}\&\ mat);}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ setEDT(\textcolor{keyword}{const}\ \mbox{\hyperlink{classEDT}{EDT}}\&\ nEDT);}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ addClass(\textcolor{keyword}{const}\ \mbox{\hyperlink{classClassEtu}{ClassEtu}}\&\ cla);}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ addNoteEtu(\textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\&\ idCE,\textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\&\ idE,\textcolor{keyword}{const}\ \mbox{\hyperlink{classNote}{Note}}\&\ note);}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ modifierNote(\textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\&\ idCE,\textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\&\ idE,\textcolor{keyword}{const}\ \mbox{\hyperlink{classNote}{Note}}\&\ note);\ }
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ addAbsenceEtu(\textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\&\ idCE,\textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\&\ idE,\textcolor{keyword}{const}\ \mbox{\hyperlink{classAbsence}{Absence}}\&\ ab);}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ chargerDepuisDatabase(\mbox{\hyperlink{classDatabase}{Database}}\&\ db);}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ saisirNote(\mbox{\hyperlink{classDatabase}{Database}}\&\ db,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ etudiantId,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ matiereId,\ \textcolor{keywordtype}{float}\ valeur,}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ coef,\ \textcolor{keyword}{const}\ std::string\&\ appreciation)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ modifierNote(\mbox{\hyperlink{classDatabase}{Database}}\&\ db,\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ noteId,\ \textcolor{keywordtype}{float}\ nouvelleValeur)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ enregistrerAbsence(\mbox{\hyperlink{classDatabase}{Database}}\&\ db,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ etudiantId,\ \textcolor{keyword}{const}\ std::string\&\ date,}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ heure,\ \textcolor{keyword}{const}\ std::string\&\ motif,}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ justifie)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \};}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}
